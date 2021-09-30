@@ -3,6 +3,9 @@
 #include <cstdio>
 #include <stdexcept>
 #include <climits>
+#include "IOHandlers.h"
+
+using namespace IO;
 
 /*
 *
@@ -16,7 +19,6 @@
 
 SDL_Window* window{};
 SDL_Renderer* renderer{};
-
 const size_t max_spr{ 100 };
 
 //
@@ -154,11 +156,8 @@ bool init(SpriteManager* spr_manager) {
 	return true;
 }
 
-bool update() {
+bool update(MouseInput* mouse, KeyboardInput* keyboard) {
 	SDL_Event e;
-
-	static bool lmbheld{};
-	static bool rmbheld{};
 
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderClear(renderer);
@@ -168,29 +167,42 @@ bool update() {
 		case SDL_QUIT:
 			return false;
 		case SDL_MOUSEBUTTONDOWN:
-			lmbheld = SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(1);
-			rmbheld = SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(3);
+			mouse->setLeftButtonDown(SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(1));
+			mouse->setRightButtonDown(SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(3));
 			break;
 		case SDL_MOUSEBUTTONUP:
-			lmbheld = SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(1);
-			rmbheld = SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(3);
+			mouse->setLeftButtonUp(!(SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(1)) && mouse->getLeftButton());
+			mouse->setRightButtonUp(!(SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(3)) && mouse->getRightButton());
+			break;
+		case SDL_KEYDOWN:
+			keyboard->setKeyDown(e.key.keysym.scancode,true);
+			break;
+		case SDL_KEYUP:
+			keyboard->setKeyUp(e.key.keysym.scancode, true);
 			break;
 		}
 	}
 
-	if (lmbheld) {
+	if (mouse->getLeftButtonDown() || keyboard->getKeyDown(SDL_SCANCODE_D)) {
 		printf("Spr x: %d\n", spr_manager->get_spr_x(0));
 		spr_manager->set_spr_xy(0, spr_manager->get_spr_x(0) + 5, spr_manager->get_spr_y(0) + 5);
 	}
-	else if (rmbheld) {
+	else if (mouse->getRightButtonDown() || keyboard->getKeyDown(SDL_SCANCODE_A)) {
 		printf("Spr x: %d\n", spr_manager->get_spr_x(0));
 		spr_manager->set_spr_xy(0, spr_manager->get_spr_x(0) - 5, spr_manager->get_spr_y(0) - 5);
 	}
 
 	spr_manager->update();
 
-	SDL_RenderPresent(renderer);
+	mouse->endUpdate();
+	keyboard->endUpdate();
 
+	return true;
+}
+
+bool draw() {
+	SDL_RenderPresent(renderer);
+	
 	return true;
 }
 
@@ -203,14 +215,21 @@ void kill() {
 }
 
 int main(int argc, char** args) {
+	const int MS_PER_FRAME = 16;
+	MouseInput mouse{};
+	KeyboardInput keyboard{};
 
 	if (!init(spr_manager)) return 1;
 
 	size_t spr{ spr_manager->add_spr_from_path("sprites\\Desert Tiles.png",10,10) };
 	if (spr < 0) return false;
 
-	while (update()) {
-		SDL_Delay(10);
+	bool running{ true };
+	while (running) {
+		Uint32 startTicks = SDL_GetTicks();
+		running = update(&mouse,&keyboard);
+		draw();
+		if(running) SDL_Delay(startTicks + MS_PER_FRAME - SDL_GetTicks());
 	}
 
 	kill();
