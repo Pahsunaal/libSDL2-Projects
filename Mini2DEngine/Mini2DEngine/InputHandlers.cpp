@@ -1,8 +1,10 @@
-#include "IOHandlers.h";
-#include <SDL.h>;
+#include "IOHandlers.h"
+#include <SDL.h>
 #include <cstdio>
 
 using namespace IO;
+
+#pragma region Mouse
 
 MouseInput::MouseInput() : x{}, y{}, leftButton{ false,false,false }, rightButton{ false,false,false } {
 }
@@ -90,6 +92,10 @@ void MouseInput::endUpdate() {
 	MouseInput::setRightButtonUp(false);
 }
 
+#pragma endregion
+
+#pragma region Keyboard
+
 KeyboardInput::KeyboardInput() : numKeys{} {
 	keys = SDL_GetKeyboardState(&numKeys);
 	keysDown = new bool[numKeys];
@@ -128,3 +134,5 @@ void KeyboardInput::endUpdate() {
 		keysUp[i] = false;
 	}
 }
+
+#pragma endregion
