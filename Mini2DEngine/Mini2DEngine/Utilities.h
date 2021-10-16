@@ -1,6 +1,9 @@
 #pragma once
+
 #include <utility>
 #include <cmath>
+#include <fstream>
+
 
 namespace Utils {
 	const double pi = 3.14159265358979323846;
@@ -14,5 +17,12 @@ namespace Utils {
 		pair.first = length * std::cos(rad);
 		pair.second = length * std::sin(rad);
 		return pair;
+	}
+
+	std::string* getStringFromFile(const char* filename) {
+		std::ifstream ifs(filename);
+		std::string* content = new std::string;
+		(*content).assign((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
+		return content;
 	}
 }

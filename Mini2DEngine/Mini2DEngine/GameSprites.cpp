@@ -24,6 +24,12 @@ void Sprite::draw(double newx, double newy) {
 	SDL_RenderCopyEx(renderer, texture, NULL, &rect, angle, NULL, SDL_FLIP_NONE);
 }
 
+void Sprite::draw(double newx, double newy, double angle) {
+	rect.x = (int)newx;
+	rect.y = (int)newy;
+	SDL_RenderCopyEx(renderer, texture, NULL, &rect, angle, NULL, SDL_FLIP_NONE);
+}
+
 const char* Sprite::getPath() {
 	return path;
 }

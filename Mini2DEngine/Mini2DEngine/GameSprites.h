@@ -6,6 +6,7 @@ namespace GameSpr {
 		Sprite(const char* path, SDL_Renderer* renderer);
 		~Sprite();
 		void draw(double newx, double newy);
+		void draw(double newx, double newy, double angle);
 		const char* getPath();
 		void setAngle(double newangle);
 		double getAngle();

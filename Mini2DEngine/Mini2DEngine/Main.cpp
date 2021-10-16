@@ -22,14 +22,6 @@ using namespace GameObj;
 SDL_Window* window{};
 SDL_Renderer* renderer{};
 
-//
-
-// DYNAMIC GLOBAL OBJECTS:
-
-
-
-//
-
 bool init() {
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
 		printf("Error in initialisation: %s", SDL_GetError());
@@ -41,6 +33,12 @@ bool init() {
 	if ((initted & flags) != flags) {
 		printf("IMG_Init: Failed to init required jpg and png support!\n");
 		printf("IMG_Init: %s\n", IMG_GetError());
+		return false;
+	}
+
+	if (TTF_Init() < 0) {
+		printf("TTF_Init: Failed to init required ttf support!\n");
+		printf("TTF_Init: %s\n", TTF_GetError());
 		return false;
 	}
 
@@ -90,7 +88,7 @@ bool update(ObjectManager* obj_manager, MouseInput* mouse, KeyboardInput* keyboa
 		}
 	}
 
-	obj_manager->update();
+	if(!obj_manager->update()) return false;
 
 	mouse->endUpdate();
 	keyboard->endUpdate();
@@ -110,6 +108,7 @@ void kill(ObjectManager* obj_manager) {
 	SDL_DestroyRenderer(renderer);
 	IMG_Quit();
 	SDL_Quit();
+	TTF_Quit();
 }
 
 int main(int argc, char** args) {

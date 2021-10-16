@@ -98,8 +98,8 @@ void MouseInput::endUpdate() {
 
 KeyboardInput::KeyboardInput() : numKeys{} {
 	keys = SDL_GetKeyboardState(&numKeys);
-	keysDown = new bool[numKeys];
-	keysUp = new bool[numKeys];
+	keysDown = new bool[numKeys] {};
+	keysUp = new bool[numKeys] {};
 }
 
 KeyboardInput::~KeyboardInput() {
@@ -109,15 +109,17 @@ KeyboardInput::~KeyboardInput() {
 
 bool KeyboardInput::getKeyDown(int key_scancode) {
 	if(key_scancode < numKeys) return keysDown[key_scancode];
-	
+	return false;
 }
 
 bool KeyboardInput::getKeyUp(int key_scancode) {
 	if (key_scancode < numKeys) return keysUp[key_scancode];
+	return false;
 }
 
 bool KeyboardInput::getKey(int key_scancode) {
 	if (key_scancode < numKeys) return keys[key_scancode];
+	return false;
 }
 
 void KeyboardInput::setKeyDown(int key_scancode, bool down) {
