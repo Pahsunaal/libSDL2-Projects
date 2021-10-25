@@ -1,0 +1,8 @@
+{
+	"x_offset" : 16,
+	"y_offset" : 16,
+	"mask_left" : 2,
+	"mask_right" : 30,
+	"mask_top" : 3,
+	"mask_bottom" : 29
+}
