@@ -1,16 +1,10 @@
 #include "GameRooms.h"
+#include "Utilities.h"
 
 
 using namespace GameRoom;
 using namespace rapidjson;
-
-rapidjson::Document* parseJSON(const char* pathToFile) {
-	rapidjson::Document* document = new rapidjson::Document{};
-	document->Parse(pathToFile);
-	return document;
-}
-
-
+using namespace Utils;
 
 #pragma region RoomManager
 
@@ -57,11 +51,22 @@ bool RoomManager::destroyRoom() {
 	} else return false;
 }
 
+bool RoomManager::restartRoom() {
+	Room* room = getRoomPointer(getCurrentRoom());
+	std::string* path = new std::string(*(room->getPath()));
+	auto func = room->creationCode;
+	delete room_array[current_room];
+	auto document = parseJSON((*path).c_str());
+	room = new Room{ path, func, document, this };
+	room_array[current_room] = room;
+	room->roomStart();
+	return true;
+}
+
 bool RoomManager::addRoom(std::string* roomJSON, std::function<void(Room*)> creationCode) {
 	if (num_rooms < max_rooms) {
 		auto document = parseJSON((*roomJSON).c_str());
-		delete roomJSON;
-		Room* room = new Room{ creationCode, document, this };
+		Room* room = new Room{ roomJSON, creationCode, document, this };
 
 		room_array[num_rooms] = room;
 		room_names.insert(std::pair<std::string, size_t>((*document)["name"].GetString(), num_rooms));
@@ -80,11 +85,12 @@ size_t RoomManager::getNumRooms() {
 
 #pragma region Room
 
-Room::Room(std::function<void(Room*)> creationCode, Document* document, RoomManager* roomMan) : creationCode{ creationCode }, room_data{ document }, name{ (*document)["name"].GetString() }, obj_array{}, w{ (*document)["width"].GetInt() }, h{ (*document)["height"].GetInt() }, roomMan{ roomMan }, num_objs{} {
+Room::Room(std::string* room_path, std::function<void(Room*)> creationCode, Document* document, RoomManager* roomMan) : path{ room_path }, creationCode { creationCode }, room_data{ document }, name{ (*document)["name"].GetString() }, obj_array{}, w{ (*document)["width"].GetInt() }, h{ (*document)["height"].GetInt() }, roomMan{ roomMan }, num_objs{} {
 }
 
 Room::~Room() {
 	delete room_data;
+	delete path;
 }
 
 void Room::roomStart() {
@@ -96,6 +102,7 @@ bool Room::addObject(size_t* obj_index) {
 	if (num_objs < max_room_obj) {
 		obj_array[num_objs] = obj_index;
 		num_objs++;
+		printf("Added Obj to %s, now %d objs\n", name.c_str(), num_objs);
 		return false;
 	}
 	else {
@@ -115,7 +122,7 @@ void Room::removeObject(size_t* objToRemove) {
 	for (size_t i{ delIndex }; i < num_objs && i < max_room_obj-1; i++) {
 		obj_array[i] = obj_array[i + 1];
 	}
-	obj_array[max_room_obj-1] = 0;
+	obj_array[max_room_obj-1] = nullptr;
 	num_objs--;
 }
 
@@ -129,6 +136,18 @@ size_t Room::getNumObjs() {
 
 std::string* Room::getName() {
 	return &name;
+}
+
+int Room::getWidth() {
+	return w;
+}
+
+int Room::getHeight() {
+	return h;
+}
+
+std::string* Room::getPath() {
+	return path;
 }
 
 #pragma endregion

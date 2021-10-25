@@ -33,6 +33,9 @@
     <ClCompile Include="GameText.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Utilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

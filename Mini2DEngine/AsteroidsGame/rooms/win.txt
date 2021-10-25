@@ -1,0 +1,5 @@
+{
+    "name" : "win",
+    "width" : 800,
+	"height" : 800
+}

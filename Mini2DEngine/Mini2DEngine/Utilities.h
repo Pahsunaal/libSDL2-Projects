@@ -1,28 +1,25 @@
-#pragma once
+#ifndef H_UTILITIES
+#define H_UTILITIES
 
 #include <utility>
 #include <cmath>
 #include <fstream>
+#include <rapidjson/document.h>
 
 
 namespace Utils {
-	const double pi = 3.14159265358979323846;
+	const double pi = 3.14159265358979323846;;
 
-	constexpr double degToRad(double deg) {
-		return deg * (pi / 180);
-	}
-	std::pair<double,double> dirLenToVector(double direction, double length) {
-		std::pair<double, double> pair{};
-		double rad = degToRad(direction);
-		pair.first = length * std::cos(rad);
-		pair.second = length * std::sin(rad);
-		return pair;
-	}
+	constexpr double degToRad(double deg);
+	std::pair<double, double> dirLenToVector(double direction, double length);
 
-	std::string* getStringFromFile(const char* filename) {
-		std::ifstream ifs(filename);
-		std::string* content = new std::string;
-		(*content).assign((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
-		return content;
-	}
+	std::string* getStringFromFile(const char* filename);
+
+	rapidjson::Document* parseJSON(const char* pathToFile);
+
+	double randDouble(double max);
+
+	double choose(double i, double j);
 }
+
+#endif // !H_UTILITIES

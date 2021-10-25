@@ -3,6 +3,7 @@
 #include <cstdio>
 #include <stdexcept>
 #include <climits>
+#include <ctime>
 #include "GameObjects.h"
 
 using namespace IO;
@@ -63,6 +64,7 @@ bool init() {
 
 bool update(ObjectManager* obj_manager, MouseInput* mouse, KeyboardInput* keyboard) {
 	SDL_Event e;
+	srand((unsigned int)time(NULL));
 
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderClear(renderer);
@@ -80,7 +82,7 @@ bool update(ObjectManager* obj_manager, MouseInput* mouse, KeyboardInput* keyboa
 			mouse->setRightButtonUp(!(SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(3)) && mouse->getRightButton());
 			break;
 		case SDL_KEYDOWN:
-			keyboard->setKeyDown(e.key.keysym.scancode,true);
+			keyboard->setKeyDown(e.key.keysym.scancode, true);
 			break;
 		case SDL_KEYUP:
 			keyboard->setKeyUp(e.key.keysym.scancode, true);

@@ -145,6 +145,7 @@
     <ClCompile Include="GameText.cpp" />
     <ClCompile Include="InputHandlers.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

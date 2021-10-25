@@ -12,7 +12,7 @@ namespace GameRoom {
 	struct RoomManager;
 
 	struct Room {
-		Room(std::function<void(Room*)> creationCode, rapidjson::Document* document, RoomManager* roomMan);
+		Room(std::string* room_path, std::function<void(Room*)> creationCode, rapidjson::Document* document, RoomManager* roomMan);
 		~Room();
 		void roomStart();
 		bool addObject(size_t* obj_index);
@@ -20,14 +20,19 @@ namespace GameRoom {
 		size_t* getObjectIndexFromArray(size_t index);
 		size_t getNumObjs();
 		std::string* getName();
+		int getWidth();
+		int getHeight();
+		std::string* getPath();
+		std::function<void(Room*)> creationCode;
 	private:
 		int w;
 		int h;
 		RoomManager* roomMan;
-		std::function<void(Room*)> creationCode;
+		
 		size_t* obj_array[max_room_obj];
 		size_t num_objs;
 		std::string name;
+		std::string* path;
 		rapidjson::Document* room_data;
 	};
 
@@ -37,9 +42,11 @@ namespace GameRoom {
 		Room* getRoomPointer(size_t index);
 		size_t getCurrentRoom();
 		std::string* getRoomName(size_t index);
+		
 		bool destroyRoom();
 		size_t getNumRooms();
 		bool selectRoom(const char* name);
+		bool restartRoom();
 		bool addRoom(std::string* roomJSON, std::function<void(Room*)> creationCode);
 	private:
 		Room* room_array[max_rooms];

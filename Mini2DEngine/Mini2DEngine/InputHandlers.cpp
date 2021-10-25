@@ -131,6 +131,7 @@ void KeyboardInput::setKeyUp(int key_scancode, bool up) {
 }
 
 void KeyboardInput::endUpdate() {
+	keys = SDL_GetKeyboardState(&numKeys);
 	for (int i{}; i < numKeys; i++) {
 		keysDown[i] = false;
 		keysUp[i] = false;
