@@ -1,0 +1,185 @@
+\hypertarget{struct_game_obj_1_1_object_manager}{}\doxysection{Game\+Obj\+::Object\+Manager Struct Reference}
+\label{struct_game_obj_1_1_object_manager}\index{GameObj::ObjectManager@{GameObj::ObjectManager}}
+
+
+{\ttfamily \#include $<$Game\+Objects.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_game_obj_1_1_object_manager_a71dce9a6c504658465f908e17db461fe}\label{struct_game_obj_1_1_object_manager_a71dce9a6c504658465f908e17db461fe}} 
+{\bfseries Object\+Manager} (SDL\+\_\+\+Renderer $\ast$renderer, \mbox{\hyperlink{struct_i_o_1_1_mouse_input}{IO\+::\+Mouse\+Input}} $\ast$mouse, \mbox{\hyperlink{struct_i_o_1_1_keyboard_input}{IO\+::\+Keyboard\+Input}} $\ast$keyboard)
+\item 
+bool \mbox{\hyperlink{struct_game_obj_1_1_object_manager_a0ba4c7f161dec9819d23c258899804ae}{update}} ()
+\item 
+void \mbox{\hyperlink{struct_game_obj_1_1_object_manager_a2208da27a6fe46f0c573984e77be7a00}{draw}} ()
+\item 
+SDL\+\_\+\+Renderer $\ast$ \mbox{\hyperlink{struct_game_obj_1_1_object_manager_a5f34ac32c901680425bb54dfb1fa3453}{get\+Renderer}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_game_obj_1_1_object_manager_a3a7baaeb4e09503de1069ed31f0dff02}{create\+Object}} (\mbox{\hyperlink{struct_game_obj_1_1_object}{Object}} $\ast$obj)
+\item 
+void \mbox{\hyperlink{struct_game_obj_1_1_object_manager_aadde24ac42e65ce5316c09e52580423f}{destroy\+Object}} (size\+\_\+t index, bool room\+\_\+end)
+\item 
+void \mbox{\hyperlink{struct_game_obj_1_1_object_manager_a3055b73c975b22180e17b41ecd0125b2}{next\+Room}} ()
+\item 
+void \mbox{\hyperlink{struct_game_obj_1_1_object_manager_a25ffb72be9f43fc4c77d44e07d7128d7}{goto\+Room}} (const char $\ast$name)
+\item 
+void \mbox{\hyperlink{struct_game_obj_1_1_object_manager_a46833325fce88112150caa5b20dc5e9a}{restart\+Room}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_game_obj_1_1_object_manager_a61ea94f943c2739bc1a9bdc14a4594a5}{get\+Num\+Obj}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \mbox{\hyperlink{struct_game_obj_1_1_object_manager_a965e9df4c29830ab4e2d08b213efca5c}{get\+Object}} (size\+\_\+t index)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \mbox{\hyperlink{struct_game_obj_1_1_object_manager_a2f87a0df9037b6a3de177f1316bdcda9}{instance\+\_\+find}} (size\+\_\+t num)
+\item 
+{\footnotesize template$<$typename T $>$ }\\size\+\_\+t \mbox{\hyperlink{struct_game_obj_1_1_object_manager_a0922ce293f0526840b89ebebb42b6dde}{instance\+\_\+list}} (size\+\_\+t $\ast$arraytofill)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_game_obj_1_1_object_manager_a8a56f3e6e1c30c87220ac344e8a9acf9}\label{struct_game_obj_1_1_object_manager_a8a56f3e6e1c30c87220ac344e8a9acf9}} 
+\mbox{\hyperlink{struct_i_o_1_1_mouse_input}{IO\+::\+Mouse\+Input}} $\ast$ {\bfseries mouse}
+\item 
+\mbox{\Hypertarget{struct_game_obj_1_1_object_manager_aaed1b5e312c9728e04184f4f1dad19ec}\label{struct_game_obj_1_1_object_manager_aaed1b5e312c9728e04184f4f1dad19ec}} 
+\mbox{\hyperlink{struct_i_o_1_1_keyboard_input}{IO\+::\+Keyboard\+Input}} $\ast$ {\bfseries keyboard}
+\item 
+\mbox{\Hypertarget{struct_game_obj_1_1_object_manager_ad0c416da1bdb1f11e05538cf90937973}\label{struct_game_obj_1_1_object_manager_ad0c416da1bdb1f11e05538cf90937973}} 
+\mbox{\hyperlink{struct_game_room_1_1_room_manager}{Game\+Room\+::\+Room\+Manager}} $\ast$ {\bfseries room\+Man}
+\item 
+\mbox{\Hypertarget{struct_game_obj_1_1_object_manager_ac3a8f597df1c245c4715b677961fd5c4}\label{struct_game_obj_1_1_object_manager_ac3a8f597df1c245c4715b677961fd5c4}} 
+\mbox{\hyperlink{struct_game_text_1_1_text_manager}{Game\+Text\+::\+Text\+Manager}} $\ast$ {\bfseries text\+Man}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A management object that handles object lifespan, creation, and storage. It also connects the keyboard, mouse, renderer, text and room managers to allow Game\+Objects to access them 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_manager_a3a7baaeb4e09503de1069ed31f0dff02}\label{struct_game_obj_1_1_object_manager_a3a7baaeb4e09503de1069ed31f0dff02}} 
+\index{GameObj::ObjectManager@{GameObj::ObjectManager}!createObject@{createObject}}
+\index{createObject@{createObject}!GameObj::ObjectManager@{GameObj::ObjectManager}}
+\doxysubsubsection{\texorpdfstring{createObject()}{createObject()}}
+{\footnotesize\ttfamily size\+\_\+t Object\+Manager\+::create\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_obj_1_1_object}{Object}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Connects a freshly created object to the \mbox{\hyperlink{struct_game_obj_1_1_object_manager}{Object\+Manager}} and returns its index in the array of Game\+Objects 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to created game object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_manager_aadde24ac42e65ce5316c09e52580423f}\label{struct_game_obj_1_1_object_manager_aadde24ac42e65ce5316c09e52580423f}} 
+\index{GameObj::ObjectManager@{GameObj::ObjectManager}!destroyObject@{destroyObject}}
+\index{destroyObject@{destroyObject}!GameObj::ObjectManager@{GameObj::ObjectManager}}
+\doxysubsubsection{\texorpdfstring{destroyObject()}{destroyObject()}}
+{\footnotesize\ttfamily void Object\+Manager\+::destroy\+Object (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index,  }\item[{bool}]{room\+\_\+end }\end{DoxyParamCaption})}
+
+Destroys an object, free the relevant memory and calling its destroy() event 
+\begin{DoxyParams}{Parameters}
+{\em index} & the index of the object to remove \\
+\hline
+{\em room\+\_\+end} & flag to indicate if this is a room\+\_\+end destruction -\/ this effects memory management, only use true if you know what you\textquotesingle{}re doing \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_manager_a2208da27a6fe46f0c573984e77be7a00}\label{struct_game_obj_1_1_object_manager_a2208da27a6fe46f0c573984e77be7a00}} 
+\index{GameObj::ObjectManager@{GameObj::ObjectManager}!draw@{draw}}
+\index{draw@{draw}!GameObj::ObjectManager@{GameObj::ObjectManager}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Object\+Manager\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calls draw event for all Game\+Objects \mbox{\Hypertarget{struct_game_obj_1_1_object_manager_a61ea94f943c2739bc1a9bdc14a4594a5}\label{struct_game_obj_1_1_object_manager_a61ea94f943c2739bc1a9bdc14a4594a5}} 
+\index{GameObj::ObjectManager@{GameObj::ObjectManager}!getNumObj@{getNumObj}}
+\index{getNumObj@{getNumObj}!GameObj::ObjectManager@{GameObj::ObjectManager}}
+\doxysubsubsection{\texorpdfstring{getNumObj()}{getNumObj()}}
+{\footnotesize\ttfamily size\+\_\+t Object\+Manager\+::get\+Num\+Obj (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the number of objects in the game \mbox{\Hypertarget{struct_game_obj_1_1_object_manager_a965e9df4c29830ab4e2d08b213efca5c}\label{struct_game_obj_1_1_object_manager_a965e9df4c29830ab4e2d08b213efca5c}} 
+\index{GameObj::ObjectManager@{GameObj::ObjectManager}!getObject@{getObject}}
+\index{getObject@{getObject}!GameObj::ObjectManager@{GameObj::ObjectManager}}
+\doxysubsubsection{\texorpdfstring{getObject()}{getObject()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ Object\+Manager\+::get\+Object (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Get a pointer to an object in the given type based on it\textquotesingle{}s index in the array 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of the Game\+Object to get a pointer to \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index of the object to get \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_manager_a5f34ac32c901680425bb54dfb1fa3453}\label{struct_game_obj_1_1_object_manager_a5f34ac32c901680425bb54dfb1fa3453}} 
+\index{GameObj::ObjectManager@{GameObj::ObjectManager}!getRenderer@{getRenderer}}
+\index{getRenderer@{getRenderer}!GameObj::ObjectManager@{GameObj::ObjectManager}}
+\doxysubsubsection{\texorpdfstring{getRenderer()}{getRenderer()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Renderer $\ast$ Object\+Manager\+::get\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns a pointer to the render target \mbox{\Hypertarget{struct_game_obj_1_1_object_manager_a25ffb72be9f43fc4c77d44e07d7128d7}\label{struct_game_obj_1_1_object_manager_a25ffb72be9f43fc4c77d44e07d7128d7}} 
+\index{GameObj::ObjectManager@{GameObj::ObjectManager}!gotoRoom@{gotoRoom}}
+\index{gotoRoom@{gotoRoom}!GameObj::ObjectManager@{GameObj::ObjectManager}}
+\doxysubsubsection{\texorpdfstring{gotoRoom()}{gotoRoom()}}
+{\footnotesize\ttfamily void Object\+Manager\+::goto\+Room (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Go to a specified room 
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the room to go to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_manager_a2f87a0df9037b6a3de177f1316bdcda9}\label{struct_game_obj_1_1_object_manager_a2f87a0df9037b6a3de177f1316bdcda9}} 
+\index{GameObj::ObjectManager@{GameObj::ObjectManager}!instance\_find@{instance\_find}}
+\index{instance\_find@{instance\_find}!GameObj::ObjectManager@{GameObj::ObjectManager}}
+\doxysubsubsection{\texorpdfstring{instance\_find()}{instance\_find()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ Object\+Manager\+::instance\+\_\+find (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{num }\end{DoxyParamCaption})}
+
+Get a pointer to the nth object of the given type if it exists 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of the Game\+Object to get a pointer to \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em num} & the ordinal object to get (1st, 2nd etc) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_manager_a0922ce293f0526840b89ebebb42b6dde}\label{struct_game_obj_1_1_object_manager_a0922ce293f0526840b89ebebb42b6dde}} 
+\index{GameObj::ObjectManager@{GameObj::ObjectManager}!instance\_list@{instance\_list}}
+\index{instance\_list@{instance\_list}!GameObj::ObjectManager@{GameObj::ObjectManager}}
+\doxysubsubsection{\texorpdfstring{instance\_list()}{instance\_list()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t Object\+Manager\+::instance\+\_\+list (\begin{DoxyParamCaption}\item[{size\+\_\+t $\ast$}]{arraytofill }\end{DoxyParamCaption})}
+
+Fill a list with the indexes of objects of the given type, and return the size of the list 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of the Game\+Object to get a list of \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em array\+To\+Fill} & a pointer to the array that will be filled \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_manager_a3055b73c975b22180e17b41ecd0125b2}\label{struct_game_obj_1_1_object_manager_a3055b73c975b22180e17b41ecd0125b2}} 
+\index{GameObj::ObjectManager@{GameObj::ObjectManager}!nextRoom@{nextRoom}}
+\index{nextRoom@{nextRoom}!GameObj::ObjectManager@{GameObj::ObjectManager}}
+\doxysubsubsection{\texorpdfstring{nextRoom()}{nextRoom()}}
+{\footnotesize\ttfamily void Object\+Manager\+::next\+Room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Goes to the next room. Use over Room\+Manager functions \mbox{\Hypertarget{struct_game_obj_1_1_object_manager_a46833325fce88112150caa5b20dc5e9a}\label{struct_game_obj_1_1_object_manager_a46833325fce88112150caa5b20dc5e9a}} 
+\index{GameObj::ObjectManager@{GameObj::ObjectManager}!restartRoom@{restartRoom}}
+\index{restartRoom@{restartRoom}!GameObj::ObjectManager@{GameObj::ObjectManager}}
+\doxysubsubsection{\texorpdfstring{restartRoom()}{restartRoom()}}
+{\footnotesize\ttfamily void Object\+Manager\+::restart\+Room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Restart the current room \mbox{\Hypertarget{struct_game_obj_1_1_object_manager_a0ba4c7f161dec9819d23c258899804ae}\label{struct_game_obj_1_1_object_manager_a0ba4c7f161dec9819d23c258899804ae}} 
+\index{GameObj::ObjectManager@{GameObj::ObjectManager}!update@{update}}
+\index{update@{update}!GameObj::ObjectManager@{GameObj::ObjectManager}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily bool Object\+Manager\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calls update event for all Game\+Objects 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_objects_8h}{Game\+Objects.\+h}}\item 
+Game\+Objects.\+cpp\end{DoxyCompactItemize}

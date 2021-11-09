@@ -1,0 +1,96 @@
+\hypertarget{struct_i_o_1_1_keyboard_input}{}\doxysection{IO\+::Keyboard\+Input Struct Reference}
+\label{struct_i_o_1_1_keyboard_input}\index{IO::KeyboardInput@{IO::KeyboardInput}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a92d9c25232e73f2d9319c79df028cc69}{Keyboard\+Input}} ()
+\item 
+\mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a2aa6da03ad4f06f93a2a940ee59d05f9}{$\sim$\+Keyboard\+Input}} ()
+\item 
+bool \mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a31d0405d375db650796da14fab49be70}{get\+Key\+Down}} (int key\+\_\+scancode)
+\item 
+bool \mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a989916171ea87b0a03aec910f01ae271}{get\+Key\+Up}} (int key\+\_\+scancode)
+\item 
+bool \mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a88d60575f516cd77c16696b51b1633a6}{get\+Key}} (int key\+\_\+scancode)
+\item 
+void \mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a5ac81ddf80c103e0cac3ebad2b1d22b1}{set\+Key\+Down}} (int key\+\_\+scancode, bool down)
+\item 
+void \mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a78d0168a1b391f2394653d3cfdc408b6}{set\+Key\+Up}} (int key\+\_\+scancode, bool up)
+\item 
+void \mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a5a35fa4562b4c75d6d8cc857bea4997c}{end\+Update}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_i_o_1_1_keyboard_input_a92d9c25232e73f2d9319c79df028cc69}\label{struct_i_o_1_1_keyboard_input_a92d9c25232e73f2d9319c79df028cc69}} 
+\index{IO::KeyboardInput@{IO::KeyboardInput}!KeyboardInput@{KeyboardInput}}
+\index{KeyboardInput@{KeyboardInput}!IO::KeyboardInput@{IO::KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{KeyboardInput()}{KeyboardInput()}}
+{\footnotesize\ttfamily Keyboard\+Input\+::\+Keyboard\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Construct new \mbox{\hyperlink{struct_i_o_1_1_keyboard_input}{Keyboard\+Input}} object \mbox{\Hypertarget{struct_i_o_1_1_keyboard_input_a2aa6da03ad4f06f93a2a940ee59d05f9}\label{struct_i_o_1_1_keyboard_input_a2aa6da03ad4f06f93a2a940ee59d05f9}} 
+\index{IO::KeyboardInput@{IO::KeyboardInput}!````~KeyboardInput@{$\sim$KeyboardInput}}
+\index{````~KeyboardInput@{$\sim$KeyboardInput}!IO::KeyboardInput@{IO::KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{$\sim$KeyboardInput()}{~KeyboardInput()}}
+{\footnotesize\ttfamily Keyboard\+Input\+::$\sim$\+Keyboard\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destroy \mbox{\hyperlink{struct_i_o_1_1_keyboard_input}{Keyboard\+Input}} object 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_i_o_1_1_keyboard_input_a5a35fa4562b4c75d6d8cc857bea4997c}\label{struct_i_o_1_1_keyboard_input_a5a35fa4562b4c75d6d8cc857bea4997c}} 
+\index{IO::KeyboardInput@{IO::KeyboardInput}!endUpdate@{endUpdate}}
+\index{endUpdate@{endUpdate}!IO::KeyboardInput@{IO::KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{endUpdate()}{endUpdate()}}
+{\footnotesize\ttfamily void Keyboard\+Input\+::end\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Engine utility function, do not use \mbox{\Hypertarget{struct_i_o_1_1_keyboard_input_a88d60575f516cd77c16696b51b1633a6}\label{struct_i_o_1_1_keyboard_input_a88d60575f516cd77c16696b51b1633a6}} 
+\index{IO::KeyboardInput@{IO::KeyboardInput}!getKey@{getKey}}
+\index{getKey@{getKey}!IO::KeyboardInput@{IO::KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{getKey()}{getKey()}}
+{\footnotesize\ttfamily bool Keyboard\+Input\+::get\+Key (\begin{DoxyParamCaption}\item[{int}]{key\+\_\+scancode }\end{DoxyParamCaption})}
+
+Check state of key 
+\begin{DoxyParams}{Parameters}
+{\em key\+\_\+scancode} & the code of the key to check. Refer to SDL Scancodes online \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_i_o_1_1_keyboard_input_a31d0405d375db650796da14fab49be70}\label{struct_i_o_1_1_keyboard_input_a31d0405d375db650796da14fab49be70}} 
+\index{IO::KeyboardInput@{IO::KeyboardInput}!getKeyDown@{getKeyDown}}
+\index{getKeyDown@{getKeyDown}!IO::KeyboardInput@{IO::KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{getKeyDown()}{getKeyDown()}}
+{\footnotesize\ttfamily bool Keyboard\+Input\+::get\+Key\+Down (\begin{DoxyParamCaption}\item[{int}]{key\+\_\+scancode }\end{DoxyParamCaption})}
+
+Check if key pressed 
+\begin{DoxyParams}{Parameters}
+{\em key\+\_\+scancode} & the code of the key to check. Refer to SDL Scancodes online \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_i_o_1_1_keyboard_input_a989916171ea87b0a03aec910f01ae271}\label{struct_i_o_1_1_keyboard_input_a989916171ea87b0a03aec910f01ae271}} 
+\index{IO::KeyboardInput@{IO::KeyboardInput}!getKeyUp@{getKeyUp}}
+\index{getKeyUp@{getKeyUp}!IO::KeyboardInput@{IO::KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{getKeyUp()}{getKeyUp()}}
+{\footnotesize\ttfamily bool Keyboard\+Input\+::get\+Key\+Up (\begin{DoxyParamCaption}\item[{int}]{key\+\_\+scancode }\end{DoxyParamCaption})}
+
+Check if key released 
+\begin{DoxyParams}{Parameters}
+{\em key\+\_\+scancode} & the code of the key to check. Refer to SDL Scancodes online \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_i_o_1_1_keyboard_input_a5ac81ddf80c103e0cac3ebad2b1d22b1}\label{struct_i_o_1_1_keyboard_input_a5ac81ddf80c103e0cac3ebad2b1d22b1}} 
+\index{IO::KeyboardInput@{IO::KeyboardInput}!setKeyDown@{setKeyDown}}
+\index{setKeyDown@{setKeyDown}!IO::KeyboardInput@{IO::KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{setKeyDown()}{setKeyDown()}}
+{\footnotesize\ttfamily void Keyboard\+Input\+::set\+Key\+Down (\begin{DoxyParamCaption}\item[{int}]{key\+\_\+scancode,  }\item[{bool}]{down }\end{DoxyParamCaption})}
+
+Engine utility function, do not use \mbox{\Hypertarget{struct_i_o_1_1_keyboard_input_a78d0168a1b391f2394653d3cfdc408b6}\label{struct_i_o_1_1_keyboard_input_a78d0168a1b391f2394653d3cfdc408b6}} 
+\index{IO::KeyboardInput@{IO::KeyboardInput}!setKeyUp@{setKeyUp}}
+\index{setKeyUp@{setKeyUp}!IO::KeyboardInput@{IO::KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{setKeyUp()}{setKeyUp()}}
+{\footnotesize\ttfamily void Keyboard\+Input\+::set\+Key\+Up (\begin{DoxyParamCaption}\item[{int}]{key\+\_\+scancode,  }\item[{bool}]{up }\end{DoxyParamCaption})}
+
+Engine utility function, do not use 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_i_o_handlers_8h}{IOHandlers.\+h}}\item 
+Input\+Handlers.\+cpp\end{DoxyCompactItemize}

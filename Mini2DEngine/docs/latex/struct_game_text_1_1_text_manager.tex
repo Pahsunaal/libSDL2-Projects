@@ -1,0 +1,104 @@
+\hypertarget{struct_game_text_1_1_text_manager}{}\doxysection{Game\+Text\+::Text\+Manager Struct Reference}
+\label{struct_game_text_1_1_text_manager}\index{GameText::TextManager@{GameText::TextManager}}
+
+
+{\ttfamily \#include $<$Game\+Text.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_game_text_1_1_text_manager_a74fb04704b33c0cc07e24d4e9ff751d4}{Text\+Manager}} (SDL\+\_\+\+Renderer $\ast$renderer)
+\item 
+\mbox{\hyperlink{struct_game_text_1_1_text_manager_a9176b8e0ebb67704649e5f7869b36317}{$\sim$\+Text\+Manager}} ()
+\item 
+\mbox{\hyperlink{struct_game_text_1_1_text}{Text}} $\ast$ \mbox{\hyperlink{struct_game_text_1_1_text_manager_a6f4a15b4c9b8e6461416ed55caf6dd24}{create\+Text}} (const char $\ast$fontpath, int size, const char $\ast$message, SDL\+\_\+\+Color color)
+\item 
+\mbox{\hyperlink{struct_game_text_1_1_text}{Text}} $\ast$ \mbox{\hyperlink{struct_game_text_1_1_text_manager_afb6e2ff8a2d5042d467f271fd3252028}{create\+Text}} (const char $\ast$fontpath, int size, const char $\ast$message, SDL\+\_\+\+Color color, int width, int height)
+\item 
+void \mbox{\hyperlink{struct_game_text_1_1_text_manager_a09eaf2721f257c96ed98a8152a11183d}{destroy\+Text}} (\mbox{\hyperlink{struct_game_text_1_1_text}{Text}} $\ast$text)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manage the lifetime and storage of \mbox{\hyperlink{struct_game_text_1_1_text}{Text}} objects 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_game_text_1_1_text_manager_a74fb04704b33c0cc07e24d4e9ff751d4}\label{struct_game_text_1_1_text_manager_a74fb04704b33c0cc07e24d4e9ff751d4}} 
+\index{GameText::TextManager@{GameText::TextManager}!TextManager@{TextManager}}
+\index{TextManager@{TextManager}!GameText::TextManager@{GameText::TextManager}}
+\doxysubsubsection{\texorpdfstring{TextManager()}{TextManager()}}
+{\footnotesize\ttfamily Text\+Manager\+::\+Text\+Manager (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+Construct a new \mbox{\hyperlink{struct_game_text_1_1_text_manager}{Text\+Manager}} 
+\begin{DoxyParams}{Parameters}
+{\em renderer} & pointer to the SDL\+\_\+\+Renderer target to use \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_text_1_1_text_manager_a9176b8e0ebb67704649e5f7869b36317}\label{struct_game_text_1_1_text_manager_a9176b8e0ebb67704649e5f7869b36317}} 
+\index{GameText::TextManager@{GameText::TextManager}!````~TextManager@{$\sim$TextManager}}
+\index{````~TextManager@{$\sim$TextManager}!GameText::TextManager@{GameText::TextManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$TextManager()}{~TextManager()}}
+{\footnotesize\ttfamily Text\+Manager\+::$\sim$\+Text\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructs the \mbox{\hyperlink{struct_game_text_1_1_text_manager}{Text\+Manager}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_game_text_1_1_text_manager_a6f4a15b4c9b8e6461416ed55caf6dd24}\label{struct_game_text_1_1_text_manager_a6f4a15b4c9b8e6461416ed55caf6dd24}} 
+\index{GameText::TextManager@{GameText::TextManager}!createText@{createText}}
+\index{createText@{createText}!GameText::TextManager@{GameText::TextManager}}
+\doxysubsubsection{\texorpdfstring{createText()}{createText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_game_text_1_1_text}{Text}} $\ast$ Text\+Manager\+::create\+Text (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fontpath,  }\item[{int}]{size,  }\item[{const char $\ast$}]{message,  }\item[{SDL\+\_\+\+Color}]{color }\end{DoxyParamCaption})}
+
+Construct new \mbox{\hyperlink{struct_game_text_1_1_text}{Text}} object safely
+
+
+\begin{DoxyParams}{Parameters}
+{\em fontpath} & the path to the ttf font file \\
+\hline
+{\em size} & the size of the font in pixels \\
+\hline
+{\em message} & the c-\/string message to display \\
+\hline
+{\em color} & the color of the text \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_text_1_1_text_manager_afb6e2ff8a2d5042d467f271fd3252028}\label{struct_game_text_1_1_text_manager_afb6e2ff8a2d5042d467f271fd3252028}} 
+\index{GameText::TextManager@{GameText::TextManager}!createText@{createText}}
+\index{createText@{createText}!GameText::TextManager@{GameText::TextManager}}
+\doxysubsubsection{\texorpdfstring{createText()}{createText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_game_text_1_1_text}{Text}} $\ast$ Text\+Manager\+::create\+Text (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fontpath,  }\item[{int}]{size,  }\item[{const char $\ast$}]{message,  }\item[{SDL\+\_\+\+Color}]{color,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+Construct new \mbox{\hyperlink{struct_game_text_1_1_text}{Text}} object safely
+
+
+\begin{DoxyParams}{Parameters}
+{\em fontpath} & the path to the ttf font file \\
+\hline
+{\em size} & the size of the font in pixels \\
+\hline
+{\em message} & the c-\/string message to display \\
+\hline
+{\em color} & the color of the text \\
+\hline
+{\em width} & the width of the text area \\
+\hline
+{\em height} & the height of the text area \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_text_1_1_text_manager_a09eaf2721f257c96ed98a8152a11183d}\label{struct_game_text_1_1_text_manager_a09eaf2721f257c96ed98a8152a11183d}} 
+\index{GameText::TextManager@{GameText::TextManager}!destroyText@{destroyText}}
+\index{destroyText@{destroyText}!GameText::TextManager@{GameText::TextManager}}
+\doxysubsubsection{\texorpdfstring{destroyText()}{destroyText()}}
+{\footnotesize\ttfamily void Text\+Manager\+::destroy\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_text_1_1_text}{Text}} $\ast$}]{text }\end{DoxyParamCaption})}
+
+Destroy the referenced \mbox{\hyperlink{struct_game_text_1_1_text}{Text}} object 
+\begin{DoxyParams}{Parameters}
+{\em text} & pointer to the \mbox{\hyperlink{struct_game_text_1_1_text}{Text}} object to destroy \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_text_8h}{Game\+Text.\+h}}\item 
+Game\+Text.\+cpp\end{DoxyCompactItemize}

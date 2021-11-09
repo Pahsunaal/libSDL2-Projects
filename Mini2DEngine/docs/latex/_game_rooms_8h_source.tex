@@ -1,0 +1,83 @@
+\hypertarget{_game_rooms_8h_source}{}\doxysection{Game\+Rooms.\+h}
+\mbox{\hyperlink{_game_rooms_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <rapidjson/document.h>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{namespace }GameRoom \{}
+\DoxyCodeLine{15     \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{_game_rooms_8h_a69203f0aaf0105fcc2f118b750b05050}{max\_room\_obj}}\{ 100 \};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{18     \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{_game_rooms_8h_a95d447a000bc8c5a776e59c0cf7b09b7}{max\_rooms}}\{ 100 \};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keyword}{struct }RoomManager;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{23     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_game_room_1_1_room}{Room}} \{}
+\DoxyCodeLine{32         \mbox{\hyperlink{struct_game_room_1_1_room_ab95aec64b59c2128b739692b37bc035b}{Room}}(std::string* room\_path, std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{struct_game_room_1_1_room}{Room}}*)> creationCode, rapidjson::Document* document, \mbox{\hyperlink{struct_game_room_1_1_room_manager}{RoomManager}}* roomMan);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{35         \mbox{\hyperlink{struct_game_room_1_1_room_a67d5da09983cc53097807fd43ba5481a}{\string~Room}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{38         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_game_room_1_1_room_ad68e4312b9d26450665511bde6cd1102}{roomStart}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{43         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_game_room_1_1_room_abc10bdedfdb4d7e2080e34301729f8f8}{addObject}}(\textcolor{keywordtype}{size\_t}* obj\_index);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{48         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_game_room_1_1_room_a37cdb4e1ec6681b3bb5406bcf8a4323c}{removeObject}}(\textcolor{keywordtype}{size\_t}* objToSearch);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{53         \textcolor{keywordtype}{size\_t}* \mbox{\hyperlink{struct_game_room_1_1_room_ab20ca01fd6707b10e9a0593bf89bdc42}{getObjectIndexFromArray}}(\textcolor{keywordtype}{size\_t} index);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56         \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_game_room_1_1_room_a3789c85fdb573efdaf88c4780c3235c0}{getNumObjs}}();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59         std::string* \mbox{\hyperlink{struct_game_room_1_1_room_aab4ccdf93ddd239c41b6f90a9142eca8}{getName}}();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_game_room_1_1_room_a297c938f6a2e911b6ae846e795d6d05e}{getWidth}}();}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_game_room_1_1_room_acbc864ff80ab5e2782a9bbcf78377e06}{getHeight}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68         std::string* \mbox{\hyperlink{struct_game_room_1_1_room_a1c000fb1373e097a9a379008a4643303}{getPath}}();}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         std::function<void(\mbox{\hyperlink{struct_game_room_1_1_room}{Room}}*)> creationCode;}
+\DoxyCodeLine{71     \textcolor{keyword}{private}:}
+\DoxyCodeLine{72         \textcolor{keywordtype}{int} w;}
+\DoxyCodeLine{73         \textcolor{keywordtype}{int} h;}
+\DoxyCodeLine{74         \mbox{\hyperlink{struct_game_room_1_1_room_manager}{RoomManager}}* roomMan;}
+\DoxyCodeLine{75         }
+\DoxyCodeLine{76         \textcolor{keywordtype}{size\_t}* obj\_array[\mbox{\hyperlink{_game_rooms_8h_a69203f0aaf0105fcc2f118b750b05050}{max\_room\_obj}}];}
+\DoxyCodeLine{77         \textcolor{keywordtype}{size\_t} num\_objs;}
+\DoxyCodeLine{78         std::string name;}
+\DoxyCodeLine{79         std::string* path;}
+\DoxyCodeLine{80         rapidjson::Document* room\_data;}
+\DoxyCodeLine{81     \};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{84     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_game_room_1_1_room_manager}{RoomManager}} \{}
+\DoxyCodeLine{86         \mbox{\hyperlink{struct_game_room_1_1_room_manager_a397e33c1d7fe642c1a262263b010d84e}{RoomManager}}();}
+\DoxyCodeLine{88         \mbox{\hyperlink{struct_game_room_1_1_room_manager_a8f3db547e6f1d5fddbf7e4c7e09e29b9}{\string~RoomManager}}();}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{93         \mbox{\hyperlink{struct_game_room_1_1_room}{Room}}* \mbox{\hyperlink{struct_game_room_1_1_room_manager_aad05df290ea6ca73e9d8280fbd7b5e73}{getRoomPointer}}(\textcolor{keywordtype}{size\_t} index);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{96         \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_game_room_1_1_room_manager_ad31973782723b5a0f662495746aeebbc}{getCurrentRoom}}();}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{99         std::string* \mbox{\hyperlink{struct_game_room_1_1_room_manager_a91580442128a7e3abba6215881c74734}{getRoomName}}(\textcolor{keywordtype}{size\_t} index);}
+\DoxyCodeLine{100         }
+\DoxyCodeLine{102         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_game_room_1_1_room_manager_a86a90fbb01f21718ef95622827b7b1d9}{destroyRoom}}();}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{105         \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_game_room_1_1_room_manager_aece3ee88280559659aee7a760f02cbf9}{getNumRooms}}();}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{110         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_game_room_1_1_room_manager_a919fec989cc16e5cbaea95dc1a99886f}{selectRoom}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{113         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_game_room_1_1_room_manager_a27c059cc495d7ff5c4201546ac7c9c3e}{restartRoom}}();}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{120         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_game_room_1_1_room_manager_a4578dc22995271d9fa4aa4f31dc04e29}{addRoom}}(std::string* roomJSON, std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{struct_game_room_1_1_room}{Room}}*)> creationCode);}
+\DoxyCodeLine{121     \textcolor{keyword}{private}:}
+\DoxyCodeLine{122         \mbox{\hyperlink{struct_game_room_1_1_room}{Room}}* room\_array[\mbox{\hyperlink{_game_rooms_8h_a95d447a000bc8c5a776e59c0cf7b09b7}{max\_rooms}}];}
+\DoxyCodeLine{123         std::map<std::string, size\_t> room\_names;}
+\DoxyCodeLine{124         \textcolor{keywordtype}{size\_t} current\_room;}
+\DoxyCodeLine{125         \textcolor{keywordtype}{size\_t} num\_rooms;}
+\DoxyCodeLine{126     \};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     }
+\DoxyCodeLine{129 \}}
+
+\end{DoxyCode}

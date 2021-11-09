@@ -1,0 +1,53 @@
+\hypertarget{_game_sprites_8h}{}\doxysection{Game\+Sprites.\+h File Reference}
+\label{_game_sprites_8h}\index{GameSprites.h@{GameSprites.h}}
+
+
+Handle sprites.  
+
+
+{\ttfamily \#include $<$SDL.\+h$>$}\newline
+{\ttfamily \#include $<$rapidjson/document.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_game_spr_1_1_sprite}{Game\+Spr\+::\+Sprite}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_game_sprites_8h_a9b91f758b96abe717935128882dd413d}{Game\+Spr\+::validate\+Details}} (rapidjson\+::\+Document $\ast$details)
+\item 
+bool \mbox{\hyperlink{_game_sprites_8h_a99fba4549ea63fd7dc9e8281733244e7}{Game\+Spr\+::rect\+Intersect}} (SDL\+\_\+\+Rect $\ast$a, SDL\+\_\+\+Rect $\ast$b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handle sprites. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_game_sprites_8h_a99fba4549ea63fd7dc9e8281733244e7}\label{_game_sprites_8h_a99fba4549ea63fd7dc9e8281733244e7}} 
+\index{GameSprites.h@{GameSprites.h}!rectIntersect@{rectIntersect}}
+\index{rectIntersect@{rectIntersect}!GameSprites.h@{GameSprites.h}}
+\doxysubsubsection{\texorpdfstring{rectIntersect()}{rectIntersect()}}
+{\footnotesize\ttfamily bool Game\+Spr\+::rect\+Intersect (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Rect $\ast$}]{a,  }\item[{SDL\+\_\+\+Rect $\ast$}]{b }\end{DoxyParamCaption})}
+
+Check if two rectangles intersect -\/ for collisions 
+\begin{DoxyParams}{Parameters}
+{\em a} & the first rectangle \\
+\hline
+{\em b} & the second rectangle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_game_sprites_8h_a9b91f758b96abe717935128882dd413d}\label{_game_sprites_8h_a9b91f758b96abe717935128882dd413d}} 
+\index{GameSprites.h@{GameSprites.h}!validateDetails@{validateDetails}}
+\index{validateDetails@{validateDetails}!GameSprites.h@{GameSprites.h}}
+\doxysubsubsection{\texorpdfstring{validateDetails()}{validateDetails()}}
+{\footnotesize\ttfamily bool Game\+Spr\+::validate\+Details (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Document $\ast$}]{details }\end{DoxyParamCaption})}
+
+Confirm that details are in correct format and exist 
+\begin{DoxyParams}{Parameters}
+{\em details} & the details Document object to look at \\
+\hline
+\end{DoxyParams}

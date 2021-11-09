@@ -1,0 +1,64 @@
+\hypertarget{_game_text_8h_source}{}\doxysection{Game\+Text.\+h}
+\mbox{\hyperlink{_game_text_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <SDL.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <SDL\_ttf.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }GameText \{}
+\DoxyCodeLine{14     \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{_game_text_8h_aa6cdb1f00f7297b4c3c4d1024f20b4ac}{max\_texts}}\{ 100 \};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{17     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_game_text_1_1_text}{Text}} \{}
+\DoxyCodeLine{28         \mbox{\hyperlink{struct_game_text_1_1_text_a2c529e44345458e5b039a3a6d0ebcd1a}{Text}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fontpath, \textcolor{keywordtype}{int} size, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* message, SDL\_Color color, SDL\_Renderer* renderer, \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_game_text_1_1_text_ac788c6eaa6ae3d14e52e780b24d19365}{index}});}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{42         \mbox{\hyperlink{struct_game_text_1_1_text_a2c529e44345458e5b039a3a6d0ebcd1a}{Text}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fontpath, \textcolor{keywordtype}{int} size, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* message, SDL\_Color color, SDL\_Renderer* renderer, \textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height, \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_game_text_1_1_text_ac788c6eaa6ae3d14e52e780b24d19365}{index}});}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45         \mbox{\hyperlink{struct_game_text_1_1_text_a2d49e5c280e205125b149f7777ae30c7}{\string~Text}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{53         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_game_text_1_1_text_a5e14122aed359d4b2735fa195d481666}{draw}}(\textcolor{keywordtype}{double} newx, \textcolor{keywordtype}{double} newy);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{62         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_game_text_1_1_text_a5e14122aed359d4b2735fa195d481666}{draw}}(\textcolor{keywordtype}{double} newx, \textcolor{keywordtype}{double} newy, \textcolor{keywordtype}{double} angle);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{73         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_game_text_1_1_text_a6a425a0abe549ab0ce18d1bafeb785e8}{drawExt}}(\textcolor{keywordtype}{double} newx, \textcolor{keywordtype}{double} newy, \textcolor{keywordtype}{double} angle, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* newmessage, \textcolor{keywordtype}{bool} autoSize);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{81         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_game_text_1_1_text_ac80c77c16b824ef5ed12dd75080b26a3}{changeMessage}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* newmessage, \textcolor{keywordtype}{bool} autoSize);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{88         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_game_text_1_1_text_a7b439d9498df97caf1f5ca4429a59533}{setAngle}}(\textcolor{keywordtype}{double} newangle);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{91         \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_game_text_1_1_text_a34cd37743d83a040170df5dbeddda75c}{getAngle}}();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{94         \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_game_text_1_1_text_ac788c6eaa6ae3d14e52e780b24d19365}{index}};}
+\DoxyCodeLine{95     \textcolor{keyword}{private}:}
+\DoxyCodeLine{96         SDL\_Texture* texture;}
+\DoxyCodeLine{97         SDL\_Surface* temp;}
+\DoxyCodeLine{98         SDL\_Renderer* renderer;}
+\DoxyCodeLine{99         TTF\_Font* font;}
+\DoxyCodeLine{100         SDL\_Rect rect;}
+\DoxyCodeLine{101         SDL\_Color color;}
+\DoxyCodeLine{102         std::string message;}
+\DoxyCodeLine{103         \textcolor{keywordtype}{int} width;}
+\DoxyCodeLine{104         \textcolor{keywordtype}{int} height;}
+\DoxyCodeLine{105         \textcolor{keywordtype}{int} size;}
+\DoxyCodeLine{106         \textcolor{keywordtype}{double} angle;}
+\DoxyCodeLine{107     \};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{110     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_game_text_1_1_text_manager}{TextManager}} \{}
+\DoxyCodeLine{115         \mbox{\hyperlink{struct_game_text_1_1_text_manager_a74fb04704b33c0cc07e24d4e9ff751d4}{TextManager}}(SDL\_Renderer* renderer);}
+\DoxyCodeLine{117         \mbox{\hyperlink{struct_game_text_1_1_text_manager_a9176b8e0ebb67704649e5f7869b36317}{\string~TextManager}}();}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{127         \mbox{\hyperlink{struct_game_text_1_1_text}{Text}}* \mbox{\hyperlink{struct_game_text_1_1_text_manager_a6f4a15b4c9b8e6461416ed55caf6dd24}{createText}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fontpath, \textcolor{keywordtype}{int} size, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* message, SDL\_Color color);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{139         \mbox{\hyperlink{struct_game_text_1_1_text}{Text}}* \mbox{\hyperlink{struct_game_text_1_1_text_manager_a6f4a15b4c9b8e6461416ed55caf6dd24}{createText}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fontpath, \textcolor{keywordtype}{int} size, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* message, SDL\_Color color, \textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height);}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{144         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_game_text_1_1_text_manager_a09eaf2721f257c96ed98a8152a11183d}{destroyText}}(\mbox{\hyperlink{struct_game_text_1_1_text}{Text}}* text);}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     \textcolor{keyword}{private}:}
+\DoxyCodeLine{147         \mbox{\hyperlink{struct_game_text_1_1_text}{Text}}* text\_array[\mbox{\hyperlink{_game_text_8h_aa6cdb1f00f7297b4c3c4d1024f20b4ac}{max\_texts}}];}
+\DoxyCodeLine{148         \textcolor{keywordtype}{size\_t} num\_texts;}
+\DoxyCodeLine{149         SDL\_Renderer* renderer;}
+\DoxyCodeLine{150     \};}
+\DoxyCodeLine{151 \}}
+
+\end{DoxyCode}

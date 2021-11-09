@@ -17,6 +17,7 @@ using namespace std::string_literals;
 #pragma region ObjectManager
 
 ObjectManager::ObjectManager(SDL_Renderer* renderer, MouseInput* mouse, KeyboardInput* keyboard) : mouse{ mouse }, keyboard{ keyboard }, renderer{ renderer }, obj_array{}, num_obj{}, game_end{} {
+	// Init additional managers
 	textMan = new TextManager{ renderer };
 	roomMan = new RoomManager{};
 	gameMan = new GameManager{ this };
@@ -25,23 +26,23 @@ ObjectManager::ObjectManager(SDL_Renderer* renderer, MouseInput* mouse, Keyboard
 ObjectManager::~ObjectManager() {
 	delete gameMan;
 	
+	// Destroy each object in the game
 	for (size_t i{}; i < num_obj; i++) {
 		destroyObject(i, true);
-		/*if(obj_array[i] != nullptr) delete obj_array[i];
-		obj_array[i] = nullptr;*/
 	}
 
+	// Free each manager
 	delete roomMan;
 	delete textMan;
 }
 
 bool ObjectManager::update() {
-	if (game_end) return false;
+	if (game_end) return false; // Check if game has ended and pass back up to update() in Main.cpp
 	for (size_t i{}; i < num_obj; i++) {
 		auto obj = obj_array[i];
 		if (obj) {
 			obj->update();
-			if (obj->getToDestruct()) destroyObject(obj->index,false);
+			if (obj->getToDestruct()) destroyObject(obj->index,false); // Destroy objects flagged for destruction
 		}
 	}
 	return true;
@@ -61,7 +62,7 @@ size_t ObjectManager::createObject(Object* obj) {
 		obj_array[num_obj] = obj;
 		num_obj++;
 
-		if (obj->getToDestruct()) {
+		if (obj->getToDestruct()) { // Checks if object creation was unsuccessful but didn't trigger exception, and destroys it
 			destroyObject(num_obj,false);
 			return -1;
 		}
@@ -70,7 +71,7 @@ size_t ObjectManager::createObject(Object* obj) {
 		return num_obj - 1;
 	}
 	catch (std::runtime_error e) {
-		printf("Error loading object: %s", e.what());
+		printf("Error loading object: %s", e.what()); // May have problems with creating sprites etc
 		return -1;
 	}
 	catch (std::exception e) {
@@ -80,23 +81,24 @@ size_t ObjectManager::createObject(Object* obj) {
 }
 
 void ObjectManager::destroyObject(size_t index, bool room_end) {
-	//printf("%d destroyed\n", index);
-	if (index >= num_obj || index >= max_obj) return;
+	if (index >= num_obj || index >= max_obj) return; // Check bounds
 	if (obj_array[index] != nullptr) {
 		auto obj = obj_array[index];
-		if(room_end) obj->setRoomEnd();
+		if(room_end) obj->setRoomEnd(); // Indicates to object whether the room will be ending
+
+		// Untangles object from room
 		Room* room = roomMan->getRoomPointer(roomMan->getCurrentRoom());
 		if(obj->getRoom()) room->removeObject(&(obj->index));
-		//if (obj->getSprite()) delete obj->getSprite();
 		delete obj_array[index];
 	}
 	obj_array[index] = nullptr;
-
+	
+	// Shifts rest of array back one index
 	for (size_t i{ index }; i < max_obj - 1 && i < num_obj-1; i++) {
 		obj_array[i] = obj_array[i + 1];
 		obj_array[i]->index--;
 	}
-	//obj_array[index] = nullptr;
+
 	obj_array[max_obj-1] = nullptr;
 	num_obj--;
 }
@@ -104,12 +106,13 @@ void ObjectManager::destroyObject(size_t index, bool room_end) {
 void ObjectManager::nextRoom() {
 	if (roomMan->getCurrentRoom() < roomMan->getNumRooms()-1) {
 		Room* room = roomMan->getRoomPointer(roomMan->getCurrentRoom());
+
+		// Destroy every object in the room
 		for (size_t i{}; i < room->getNumObjs(); i++) {
 			destroyObject(*room->getObjectIndexFromArray(0),true);
 		}
-		//roomMan->destroyRoom();
 	}
-	else game_end = true;
+	else game_end = true; // Trying to go the next room when no more exists ends the game
 }
 
 void ObjectManager::gotoRoom(const char* name) {
@@ -119,8 +122,8 @@ void ObjectManager::gotoRoom(const char* name) {
 
 		size_t* world_obj_index = room->getObjectIndexFromArray(0);
 
+		// Untangles persistent objects or destroys non-persistent objects
 		if (!obj_array[*world_obj_index]->getPersistent()) {
-			//room->removeObject(world_obj_index);
 			destroyObject(*world_obj_index,true);
 		}
 		else {
@@ -139,7 +142,6 @@ void ObjectManager::restartRoom() {
 		size_t* world_obj_index = room->getObjectIndexFromArray(0);
 
 		if (!obj_array[*world_obj_index]->getPersistent()) {
-			//room->removeObject(world_obj_index);
 			destroyObject(*world_obj_index,true);
 		}
 		else {
@@ -160,7 +162,7 @@ size_t ObjectManager::getNumObj() {
 
 template<typename T>
 T* ObjectManager::getObject(size_t index) {
-	if(index < num_obj) return dynamic_cast<T*>(obj_array[index]);
+	if(index < num_obj) return dynamic_cast<T*>(obj_array[index]); // Type casts Object* to type of requested object. Can cause errors, watch out!
 	return nullptr;
 }
 
@@ -203,10 +205,7 @@ Object::Object(ObjectManager* objMan, Room* room, double X, double Y) : spr{}, h
 }
 
 Object::~Object() {
-	//destroy();
-	//if(room) room->removeObject(&index);
 	if(spr) delete spr;
-	//printf("Destroyed an object\n");
 }
 
 void Object::create() {
@@ -235,6 +234,8 @@ double Object::getX() {
 
 void Object::setX(double newx) {
 	x = newx;
+
+	// Update collision mask position if it exists
 	if (hasSpr) {
 		rapidjson::Document* details = spr->getSpriteDetails();
 
@@ -248,6 +249,8 @@ double Object::getY() {
 
 void Object::setY(double newy) {
 	y = newy;
+
+	// Update collision mask position if it exists
 	if (hasSpr) {
 		rapidjson::Document* details = spr->getSpriteDetails();
 
@@ -258,6 +261,8 @@ void Object::setY(double newy) {
 void Object::setXY(double newx, double newy) {
 	x = newx;
 	y = newy;
+
+	// Update collision mask position if it exists
 	if (hasSpr) {
 		rapidjson::Document* details = spr->getSpriteDetails();
 
@@ -268,17 +273,19 @@ void Object::setXY(double newx, double newy) {
 
 void Object::addX(double add) {
 	x += add;
+
+	// Update collision mask position if it exists
 	if (hasSpr) {
 		rapidjson::Document* details = spr->getSpriteDetails();
 
 		col_mask.x = x - (*details)["x_offset"].GetInt() + (*details)["mask_left"].GetInt();
-		//printf("%d\n", col_mask.x);
-		//printf("%d\n", getColMask()->x);
 	}
 }
 
 void Object::addY(double add) {
 	y += add;
+
+	// Update collision mask position if it exists
 	if (hasSpr) {
 		rapidjson::Document* details = spr->getSpriteDetails();
 
@@ -289,16 +296,18 @@ void Object::addY(double add) {
 bool Object::setSprite(std::string* name) {
 	Sprite* tmp = spr;
 
+	// Determine path of sprite based on name and rigid structure
 	std::string imgpath = "sprites\\" + *name + "\\" + *name + ".png";
 	std::string detailspath = "sprites\\" + *name + "\\" + *name + ".json";
 	
 	try {
 		spr = new Sprite{ name->c_str(), imgpath.c_str(), detailspath.c_str(), objMan->getRenderer() };
-		if (tmp) delete tmp;
+		if (tmp) delete tmp; // Frees the old sprite if it existed
 		hasSpr = true;
 
 		rapidjson::Document* details = spr->getSpriteDetails();
 
+		// Update collision mask position
 		col_mask.x = x - (*details)["x_offset"].GetInt() + (*details)["mask_left"].GetInt();
 		col_mask.w = (*details)["mask_right"].GetInt() - (*details)["mask_left"].GetInt();
 		col_mask.y = y - (*details)["y_offset"].GetInt() + (*details)["mask_top"].GetInt();
@@ -366,6 +375,7 @@ T* Object::check_collision() {
 
 	size_t num = objMan->instance_list<T>(arraytofill);
 
+	// Checks for a rectangle intersection on the collision mask of the current object and each object of the requested type
 	for (size_t i{}; i < num; i++) {
 		T* obj = objMan->getObject<T>(arraytofill[i]);
 		auto result = rectIntersect(&col_mask, obj->getColMask());
@@ -380,13 +390,15 @@ T* Object::check_collision() {
 #pragma region User Defined Objects
 
 // Forward-Declare objects here
-struct Template;
+
+/** A basic example for how objects should be structured*/
 struct Template : Object {
 	Template(ObjectManager* objMan, Room* room, double X, double Y) : Object{ objMan, room, X, Y } {
 
 	}
 };
 
+/// @private
 struct Asteroid : Object {
 	Asteroid(ObjectManager* objMan, Room* room, double X, double Y, const char* sprname);
 	~Asteroid();
@@ -399,6 +411,7 @@ struct Asteroid : Object {
 	double speed = 0;
 };
 
+/// @private
 struct Game : Object {
 	Game(ObjectManager* objMan, Room* room, double X, double Y) : Object{ objMan, room, X, Y } {
 	}
@@ -408,13 +421,18 @@ struct Game : Object {
 		score = 0;
 		lives = 3;
 		SDL_Color white{ 255,255,255 };
+
+		// Text objects
 		textTitle = TEXT->createText("fonts\\Hasklig-Medium.ttf", 36, "Space Rocks", white);
 		textScore = TEXT->createText("fonts\\Hasklig-Medium.ttf", 24, "Score: 0", white);
 		textLives = TEXT->createText("fonts\\Hasklig-Medium.ttf", 24, "Lives: XXX", white);
 		textGameover = TEXT->createText("fonts\\Hasklig-Medium.ttf", 28, "Game Over!", white);
 		textWin = TEXT->createText("fonts\\Hasklig-Medium.ttf", 28, "You Won!", white);
 		textPressPlay = TEXT->createText("fonts\\Hasklig-Medium.ttf", 24, "Press ENTER to play", white);
+
 		alarm0 = 0;
+
+		// Create asteroids in title room
 		for (int i{}; i < 6; i++) {
 			double xx = rand() % room->getWidth();
 			double yy = rand() % room->getHeight();
@@ -426,6 +444,8 @@ struct Game : Object {
 	void update() override {
 		auto roomname = objMan->roomMan->getRoomName(objMan->roomMan->getCurrentRoom());
 		Room* roomCur = objMan->roomMan->getRoomPointer(objMan->roomMan->getCurrentRoom());
+		
+		// If enter pressed
 		if (KEYBOARD->getKeyDown(SDL_SCANCODE_RETURN)) {
 			if (strcmp(roomname->c_str(), "start") == 0) {
 				objMan->gotoRoom("game");
@@ -436,7 +456,7 @@ struct Game : Object {
 			}
 		}
 		
-
+		// Timer increments and creates asteroids every 4 seconds
 		if (strcmp(roomname->c_str(), "game") == 0) {
 			alarm0++;
 			if (alarm0 > 60 * 4) {
@@ -456,12 +476,10 @@ struct Game : Object {
 			}
 
 			if (lives <= 0) {
-				//printf("DEAD");
 				objMan->gotoRoom("gameover");
 			}
 
 			if (score >= 1000) {
-				//printf("Win!");
 				objMan->gotoRoom("win");
 			}
 		}
@@ -506,6 +524,7 @@ struct Game : Object {
 
 struct Ship;
 
+/// @private
 struct Bullet : Object {
 	Bullet(ObjectManager* objMan, Room* room, double X, double Y);
 	void create() override;
@@ -514,12 +533,12 @@ struct Bullet : Object {
 	std::string sprname = "bullet";
 };
 
+/// @private
 struct Ship : Object {
 	Ship(ObjectManager* objMan, Room* room, double X, double Y) : Object{ objMan, room, X, Y } {
 	}
 
 	void create() override {
-		//printf("Created the ship\n");
 		setSprite(&sprname);
 
 		speed = 0;
@@ -545,11 +564,12 @@ struct Ship : Object {
 			objMan->createObject(new Bullet(objMan, room, getX(), getY()));
 		}
 
+		// Figure out where ship should be based on speed and direction
 		std::pair<double, double> vector = Utils::dirLenToVector(getDirection(), speed);
-		//printf("%f, %f\n", vector.first,vector.second);
 		addX(vector.first);
 		addY(vector.second);
 
+		// Handle loop around
 		if (getX() > room->getWidth()) {
 			setX(0);
 		}
@@ -564,7 +584,7 @@ struct Ship : Object {
 			setY(room->getHeight());
 		}
 
-		//printf("(%f, %f), (%d, %d)\n", getX(), getY(), getColMask()->x, getColMask()->y);
+		// Check for collisions and restart room with one less life if it occurs
 		if (check_collision<Asteroid>()) {
 			objMan->instance_find<Game>(1)->lives--;
 			objMan->restartRoom();
@@ -585,15 +605,18 @@ Bullet::Bullet(ObjectManager* objMan, Room* room, double X, double Y) : Object{ 
 void Bullet::create() {
 	setSprite(&sprname);
 
+	// Bullet set to same direction as ship
 	setDirection(objMan->instance_find<Ship>(1)->getDirection());
 }
 
 void Bullet::update() {
+	// Figure out where ship should be based on speed and direction
 	std::pair<double, double> vector = Utils::dirLenToVector(getDirection(), speed);
 
 	addX(vector.first);
 	addY(vector.second);
 
+	// Check for collision with asteroid and trigger relevant destruction and score increment
 	auto col = check_collision<Asteroid>();
 	if (col) {
 		objMan->instance_find<Game>(1)->score+=10;
@@ -601,6 +624,7 @@ void Bullet::update() {
 		selfDestruct();
 	}
 
+	// Destroy object if it goes out of bounds
 	if (getX() > room->getWidth() || getY() > room->getHeight() || getY() < 0 || getX() < 0) {
 		selfDestruct();
 	}
@@ -615,18 +639,19 @@ Asteroid::Asteroid(ObjectManager* objMan, Room* room, double X, double Y, const 
 }
 
 Asteroid::~Asteroid() {
-	if(!room_end) destroy();
+	if(!room_end) destroy(); // only perform breaking up of asteroid when the room isnt ending
 }
 
 void Asteroid::create() {
 	setSprite(&(this->sprname));
 
+	// Pick random speeds and directions
 	setDirection(Utils::randDouble(360.0));
 	speed = Utils::randDouble(maxSpeed) + 1;
 }
 
 void Asteroid::destroy() {
-	
+	// Create increasingly smaller asteroids when destroyed
 	if (strcmp(getSprite()->getName(), "largeAsteroid") == 0) {
 		for (int i{}; i < 2; i++) objMan->createObject(new Asteroid(objMan, room, getX(), getY(), "medAsteroid"));
 	}
@@ -636,11 +661,13 @@ void Asteroid::destroy() {
 }
 
 void Asteroid::update() {
+	// Figure out where ship should be based on speed and direction
 	std::pair<double, double> vector = Utils::dirLenToVector(getDirection(), speed);
 
 	addX(vector.first);
 	addY(vector.second);
 
+	// Handle out of bounds looping
 	if (getX() > room->getWidth()) {
 		setX(0);
 	}
@@ -664,13 +691,16 @@ void Asteroid::update() {
 #pragma region GameManager
 
 GameManager::GameManager(ObjectManager* objMan) {
-	//printf("Created the gamemanager\n");
+	printf("Created the gamemanager\n");
 
+	// Add the start room
 	objMan->roomMan->addRoom(Utils::getStringFromFile("rooms/start.txt"), 
 		[objMan](Room* room) {
 			objMan->createObject(new Game(objMan, room,0,0));
 		}
 	);
+
+	// Add the game room
 	objMan->roomMan->addRoom(Utils::getStringFromFile("rooms/game.txt"),
 		[objMan](Room* room) {
 			objMan->createObject(new Ship(objMan, room,400,400));
@@ -691,22 +721,27 @@ GameManager::GameManager(ObjectManager* objMan) {
 			}
 		}
 	);
+	
+	// Add the game over room
 	objMan->roomMan->addRoom(Utils::getStringFromFile("rooms/gameover.txt"),
 		[objMan](Room* room) {
 
 		}
 	);
+
+	// Add the win room
 	objMan->roomMan->addRoom(Utils::getStringFromFile("rooms/win.txt"),
 		[objMan](Room* room) {
 
 		}
 	);
 
+	// Start the first room
 	objMan->roomMan->getRoomPointer(0)->roomStart();
 }
 
 GameManager::~GameManager() {
-	//printf("Destroyed the gamemanager\n");
+
 }
 
 #pragma endregion

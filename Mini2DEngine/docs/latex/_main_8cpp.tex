@@ -1,0 +1,75 @@
+\hypertarget{_main_8cpp}{}\doxysection{Main.\+cpp File Reference}
+\label{_main_8cpp}\index{Main.cpp@{Main.cpp}}
+
+
+Handles core engine functions and main game loop. Remember to add libpng.\+dll, jpeg.\+dll etc to the builds because of nuget not working!  
+
+
+{\ttfamily \#include $<$SDL.\+h$>$}\newline
+{\ttfamily \#include $<$SDL\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$climits$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include \char`\"{}Game\+Objects.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_main_8cpp_aee8048628ff2b5c026c9e15acdcaacb8}{init}} ()
+\item 
+bool \mbox{\hyperlink{_main_8cpp_a392e7033181ab664c38255b881621dbf}{update}} (\mbox{\hyperlink{struct_game_obj_1_1_object_manager}{Object\+Manager}} $\ast$obj\+\_\+manager, \mbox{\hyperlink{struct_i_o_1_1_mouse_input}{Mouse\+Input}} $\ast$mouse, \mbox{\hyperlink{struct_i_o_1_1_keyboard_input}{Keyboard\+Input}} $\ast$keyboard)
+\item 
+bool \mbox{\hyperlink{_main_8cpp_a7174f8a9ae5d86df6f6e614102e1a034}{draw}} (\mbox{\hyperlink{struct_game_obj_1_1_object_manager}{Object\+Manager}} $\ast$obj\+\_\+manager)
+\item 
+void \mbox{\hyperlink{_main_8cpp_aa3e6e40fb3bedd3d7af5d25daa19b2a7}{kill}} (\mbox{\hyperlink{struct_game_obj_1_1_object_manager}{Object\+Manager}} $\ast$obj\+\_\+manager)
+\item 
+int \mbox{\hyperlink{_main_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328}{main}} (int argc, char $\ast$$\ast$args)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_main_8cpp_aaa8e409e04dcf575ef63fd5fb3db06f9}\label{_main_8cpp_aaa8e409e04dcf575ef63fd5fb3db06f9}} 
+SDL\+\_\+\+Window $\ast$ {\bfseries window} \{\}
+\item 
+\mbox{\Hypertarget{_main_8cpp_a966da7a60c4ea3ba301e26ccc5efe452}\label{_main_8cpp_a966da7a60c4ea3ba301e26ccc5efe452}} 
+SDL\+\_\+\+Renderer $\ast$ {\bfseries renderer} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles core engine functions and main game loop. Remember to add libpng.\+dll, jpeg.\+dll etc to the builds because of nuget not working! 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_main_8cpp_a7174f8a9ae5d86df6f6e614102e1a034}\label{_main_8cpp_a7174f8a9ae5d86df6f6e614102e1a034}} 
+\index{Main.cpp@{Main.cpp}!draw@{draw}}
+\index{draw@{draw}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily bool draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_obj_1_1_object_manager}{Object\+Manager}} $\ast$}]{obj\+\_\+manager }\end{DoxyParamCaption})}
+
+Call draw event of all objects through the object manager, and update screen with the render target \mbox{\Hypertarget{_main_8cpp_aee8048628ff2b5c026c9e15acdcaacb8}\label{_main_8cpp_aee8048628ff2b5c026c9e15acdcaacb8}} 
+\index{Main.cpp@{Main.cpp}!init@{init}}
+\index{init@{init}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily bool init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialise game engine, including SDL, the window, and the renderer \mbox{\Hypertarget{_main_8cpp_aa3e6e40fb3bedd3d7af5d25daa19b2a7}\label{_main_8cpp_aa3e6e40fb3bedd3d7af5d25daa19b2a7}} 
+\index{Main.cpp@{Main.cpp}!kill@{kill}}
+\index{kill@{kill}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{kill()}{kill()}}
+{\footnotesize\ttfamily void kill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_obj_1_1_object_manager}{Object\+Manager}} $\ast$}]{obj\+\_\+manager }\end{DoxyParamCaption})}
+
+Safely exit the SDL environment and free resources from memory \mbox{\Hypertarget{_main_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328}\label{_main_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328}} 
+\index{Main.cpp@{Main.cpp}!main@{main}}
+\index{main@{main}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+Main function -\/ contains game loop \mbox{\Hypertarget{_main_8cpp_a392e7033181ab664c38255b881621dbf}\label{_main_8cpp_a392e7033181ab664c38255b881621dbf}} 
+\index{Main.cpp@{Main.cpp}!update@{update}}
+\index{update@{update}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily bool update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_obj_1_1_object_manager}{Object\+Manager}} $\ast$}]{obj\+\_\+manager,  }\item[{\mbox{\hyperlink{struct_i_o_1_1_mouse_input}{Mouse\+Input}} $\ast$}]{mouse,  }\item[{\mbox{\hyperlink{struct_i_o_1_1_keyboard_input}{Keyboard\+Input}} $\ast$}]{keyboard }\end{DoxyParamCaption})}
+
+Handle update (per-\/frame) of game logic. Includes event pipeline 

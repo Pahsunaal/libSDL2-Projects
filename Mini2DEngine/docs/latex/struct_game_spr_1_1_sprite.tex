@@ -1,0 +1,152 @@
+\hypertarget{struct_game_spr_1_1_sprite}{}\doxysection{Game\+Spr\+::Sprite Struct Reference}
+\label{struct_game_spr_1_1_sprite}\index{GameSpr::Sprite@{GameSpr::Sprite}}
+
+
+{\ttfamily \#include $<$Game\+Sprites.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_game_spr_1_1_sprite_a9e5753a1db31db7a617f3ac8a196a45c}{Sprite}} (const char $\ast$name, const char $\ast$path, const char $\ast$detailspath, SDL\+\_\+\+Renderer $\ast$renderer)
+\item 
+\mbox{\hyperlink{struct_game_spr_1_1_sprite_a8accab430f9d90ae5117b57d67e32b84}{$\sim$\+Sprite}} ()
+\item 
+void \mbox{\hyperlink{struct_game_spr_1_1_sprite_a347112fd52607d8b0a14ac680b273147}{draw}} (double newx, double newy)
+\item 
+void \mbox{\hyperlink{struct_game_spr_1_1_sprite_afb6b9e6badfaceda09e616dea2435d5b}{draw}} (double newx, double newy, double angle)
+\item 
+const char $\ast$ \mbox{\hyperlink{struct_game_spr_1_1_sprite_ae14d03334a9696a0f93de65cc1ecfb55}{get\+Path}} ()
+\item 
+void \mbox{\hyperlink{struct_game_spr_1_1_sprite_a22f03f3eb0930651ab36779ca1ec59be}{set\+Angle}} (double newangle)
+\item 
+double \mbox{\hyperlink{struct_game_spr_1_1_sprite_af3fd003e49576353e53d33163ecc6fd6}{get\+Angle}} ()
+\item 
+rapidjson\+::\+Document $\ast$ \mbox{\hyperlink{struct_game_spr_1_1_sprite_a30b8d0d438cf4c1d208191f79a9de0b1}{get\+Sprite\+Details}} ()
+\item 
+int \mbox{\hyperlink{struct_game_spr_1_1_sprite_aba3d4752461ec679fbf5de7ec4c34f61}{get\+Width}} ()
+\item 
+int \mbox{\hyperlink{struct_game_spr_1_1_sprite_a67b67082cfda90103d2d9eefea04cc4b}{get\+Height}} ()
+\item 
+const char $\ast$ \mbox{\hyperlink{struct_game_spr_1_1_sprite_abb9d47a989b9af089fc3c39d8e7c1ebf}{get\+Name}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a texture to draw to the screen, storing important details about its position in-\/world 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_game_spr_1_1_sprite_a9e5753a1db31db7a617f3ac8a196a45c}\label{struct_game_spr_1_1_sprite_a9e5753a1db31db7a617f3ac8a196a45c}} 
+\index{GameSpr::Sprite@{GameSpr::Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!GameSpr::Sprite@{GameSpr::Sprite}}
+\doxysubsubsection{\texorpdfstring{Sprite()}{Sprite()}}
+{\footnotesize\ttfamily Sprite\+::\+Sprite (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{path,  }\item[{const char $\ast$}]{detailspath,  }\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+Construct new \mbox{\hyperlink{struct_game_spr_1_1_sprite}{Sprite}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the sprite \\
+\hline
+{\em path} & the path to the sprite\textquotesingle{}s image file \\
+\hline
+{\em path} & the path to the sprite\textquotesingle{}s properties file \\
+\hline
+{\em renderer} & the SDL\+\_\+\+Renderer to use, as a pointer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_spr_1_1_sprite_a8accab430f9d90ae5117b57d67e32b84}\label{struct_game_spr_1_1_sprite_a8accab430f9d90ae5117b57d67e32b84}} 
+\index{GameSpr::Sprite@{GameSpr::Sprite}!````~Sprite@{$\sim$Sprite}}
+\index{````~Sprite@{$\sim$Sprite}!GameSpr::Sprite@{GameSpr::Sprite}}
+\doxysubsubsection{\texorpdfstring{$\sim$Sprite()}{~Sprite()}}
+{\footnotesize\ttfamily Sprite\+::$\sim$\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destroys the sprite 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_game_spr_1_1_sprite_a347112fd52607d8b0a14ac680b273147}\label{struct_game_spr_1_1_sprite_a347112fd52607d8b0a14ac680b273147}} 
+\index{GameSpr::Sprite@{GameSpr::Sprite}!draw@{draw}}
+\index{draw@{draw}!GameSpr::Sprite@{GameSpr::Sprite}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+::draw (\begin{DoxyParamCaption}\item[{double}]{newx,  }\item[{double}]{newy }\end{DoxyParamCaption})}
+
+Draw the \mbox{\hyperlink{struct_game_spr_1_1_sprite}{Sprite}} object at the given x and y
+
+
+\begin{DoxyParams}{Parameters}
+{\em newx} & the x coordinate to draw at \\
+\hline
+{\em newy} & the y coordinate to draw at \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_spr_1_1_sprite_afb6b9e6badfaceda09e616dea2435d5b}\label{struct_game_spr_1_1_sprite_afb6b9e6badfaceda09e616dea2435d5b}} 
+\index{GameSpr::Sprite@{GameSpr::Sprite}!draw@{draw}}
+\index{draw@{draw}!GameSpr::Sprite@{GameSpr::Sprite}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite\+::draw (\begin{DoxyParamCaption}\item[{double}]{newx,  }\item[{double}]{newy,  }\item[{double}]{angle }\end{DoxyParamCaption})}
+
+Draw the sprite object at the given x and y, at an angle
+
+
+\begin{DoxyParams}{Parameters}
+{\em newx} & the x coordinate to draw at \\
+\hline
+{\em newy} & the y coordinate to draw at \\
+\hline
+{\em angle} & the angle to draw the sprite at \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_spr_1_1_sprite_af3fd003e49576353e53d33163ecc6fd6}\label{struct_game_spr_1_1_sprite_af3fd003e49576353e53d33163ecc6fd6}} 
+\index{GameSpr::Sprite@{GameSpr::Sprite}!getAngle@{getAngle}}
+\index{getAngle@{getAngle}!GameSpr::Sprite@{GameSpr::Sprite}}
+\doxysubsubsection{\texorpdfstring{getAngle()}{getAngle()}}
+{\footnotesize\ttfamily double Sprite\+::get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the angle of the sprite object \mbox{\Hypertarget{struct_game_spr_1_1_sprite_a67b67082cfda90103d2d9eefea04cc4b}\label{struct_game_spr_1_1_sprite_a67b67082cfda90103d2d9eefea04cc4b}} 
+\index{GameSpr::Sprite@{GameSpr::Sprite}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!GameSpr::Sprite@{GameSpr::Sprite}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily int Sprite\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get height of sprite \mbox{\Hypertarget{struct_game_spr_1_1_sprite_abb9d47a989b9af089fc3c39d8e7c1ebf}\label{struct_game_spr_1_1_sprite_abb9d47a989b9af089fc3c39d8e7c1ebf}} 
+\index{GameSpr::Sprite@{GameSpr::Sprite}!getName@{getName}}
+\index{getName@{getName}!GameSpr::Sprite@{GameSpr::Sprite}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const char $\ast$ Sprite\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get name of sprite \mbox{\Hypertarget{struct_game_spr_1_1_sprite_ae14d03334a9696a0f93de65cc1ecfb55}\label{struct_game_spr_1_1_sprite_ae14d03334a9696a0f93de65cc1ecfb55}} 
+\index{GameSpr::Sprite@{GameSpr::Sprite}!getPath@{getPath}}
+\index{getPath@{getPath}!GameSpr::Sprite@{GameSpr::Sprite}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily const char $\ast$ Sprite\+::get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get path to the sprite \mbox{\Hypertarget{struct_game_spr_1_1_sprite_a30b8d0d438cf4c1d208191f79a9de0b1}\label{struct_game_spr_1_1_sprite_a30b8d0d438cf4c1d208191f79a9de0b1}} 
+\index{GameSpr::Sprite@{GameSpr::Sprite}!getSpriteDetails@{getSpriteDetails}}
+\index{getSpriteDetails@{getSpriteDetails}!GameSpr::Sprite@{GameSpr::Sprite}}
+\doxysubsubsection{\texorpdfstring{getSpriteDetails()}{getSpriteDetails()}}
+{\footnotesize\ttfamily Document $\ast$ Sprite\+::get\+Sprite\+Details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get a pointer to the details of the sprite in a Document object \mbox{\Hypertarget{struct_game_spr_1_1_sprite_aba3d4752461ec679fbf5de7ec4c34f61}\label{struct_game_spr_1_1_sprite_aba3d4752461ec679fbf5de7ec4c34f61}} 
+\index{GameSpr::Sprite@{GameSpr::Sprite}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!GameSpr::Sprite@{GameSpr::Sprite}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily int Sprite\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get width of sprite \mbox{\Hypertarget{struct_game_spr_1_1_sprite_a22f03f3eb0930651ab36779ca1ec59be}\label{struct_game_spr_1_1_sprite_a22f03f3eb0930651ab36779ca1ec59be}} 
+\index{GameSpr::Sprite@{GameSpr::Sprite}!setAngle@{setAngle}}
+\index{setAngle@{setAngle}!GameSpr::Sprite@{GameSpr::Sprite}}
+\doxysubsubsection{\texorpdfstring{setAngle()}{setAngle()}}
+{\footnotesize\ttfamily void Sprite\+::set\+Angle (\begin{DoxyParamCaption}\item[{double}]{newangle }\end{DoxyParamCaption})}
+
+Change angle of sprite object
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & the angle to draw the sprite at \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_sprites_8h}{Game\+Sprites.\+h}}\item 
+Game\+Sprites.\+cpp\end{DoxyCompactItemize}

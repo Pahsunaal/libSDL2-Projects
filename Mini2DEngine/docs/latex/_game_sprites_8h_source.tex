@@ -1,0 +1,50 @@
+\hypertarget{_game_sprites_8h_source}{}\doxysection{Game\+Sprites.\+h}
+\mbox{\hyperlink{_game_sprites_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <SDL.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <rapidjson/document.h>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }GameSpr \{}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{14     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_game_spr_1_1_sprite}{Sprite}} \{}
+\DoxyCodeLine{23         \mbox{\hyperlink{struct_game_spr_1_1_sprite_a9e5753a1db31db7a617f3ac8a196a45c}{Sprite}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* path, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* detailspath, SDL\_Renderer* renderer);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{26         \mbox{\hyperlink{struct_game_spr_1_1_sprite_a8accab430f9d90ae5117b57d67e32b84}{\string~Sprite}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_game_spr_1_1_sprite_a347112fd52607d8b0a14ac680b273147}{draw}}(\textcolor{keywordtype}{double} newx, \textcolor{keywordtype}{double} newy);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{43         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_game_spr_1_1_sprite_a347112fd52607d8b0a14ac680b273147}{draw}}(\textcolor{keywordtype}{double} newx, \textcolor{keywordtype}{double} newy, \textcolor{keywordtype}{double} angle);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{struct_game_spr_1_1_sprite_ae14d03334a9696a0f93de65cc1ecfb55}{getPath}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{53         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_game_spr_1_1_sprite_a22f03f3eb0930651ab36779ca1ec59be}{setAngle}}(\textcolor{keywordtype}{double} newangle);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56         \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_game_spr_1_1_sprite_af3fd003e49576353e53d33163ecc6fd6}{getAngle}}();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59         rapidjson::Document* \mbox{\hyperlink{struct_game_spr_1_1_sprite_a30b8d0d438cf4c1d208191f79a9de0b1}{getSpriteDetails}}();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_game_spr_1_1_sprite_aba3d4752461ec679fbf5de7ec4c34f61}{getWidth}}();}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_game_spr_1_1_sprite_a67b67082cfda90103d2d9eefea04cc4b}{getHeight}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{struct_game_spr_1_1_sprite_abb9d47a989b9af089fc3c39d8e7c1ebf}{getName}}();}
+\DoxyCodeLine{69     \textcolor{keyword}{private}:}
+\DoxyCodeLine{70         SDL\_Texture* texture;}
+\DoxyCodeLine{71         SDL\_Surface* temp;}
+\DoxyCodeLine{72         SDL\_Renderer* renderer;}
+\DoxyCodeLine{73         SDL\_Rect rect;}
+\DoxyCodeLine{74         \textcolor{keywordtype}{double} angle;}
+\DoxyCodeLine{75         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* name;}
+\DoxyCodeLine{76         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* path;}
+\DoxyCodeLine{77         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* detailspath;}
+\DoxyCodeLine{78         rapidjson::Document* sprite\_details;}
+\DoxyCodeLine{79     \};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{84     \textcolor{keywordtype}{bool} \mbox{\hyperlink{_game_sprites_8h_a9b91f758b96abe717935128882dd413d}{validateDetails}}(rapidjson::Document* details);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{90     \textcolor{keywordtype}{bool} \mbox{\hyperlink{_game_sprites_8h_a99fba4549ea63fd7dc9e8281733244e7}{rectIntersect}}(SDL\_Rect* a, SDL\_Rect* b);}
+\DoxyCodeLine{91 \}}
+
+\end{DoxyCode}

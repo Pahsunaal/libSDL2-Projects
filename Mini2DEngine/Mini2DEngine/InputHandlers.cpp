@@ -86,6 +86,7 @@ void MouseInput::setY(int newy) {
 }
 
 void MouseInput::endUpdate() {
+	// For single click checks
 	MouseInput::setLeftButtonDown(false);
 	MouseInput::setLeftButtonUp(false);
 	MouseInput::setRightButtonDown(false);
@@ -133,6 +134,7 @@ void KeyboardInput::setKeyUp(int key_scancode, bool up) {
 void KeyboardInput::endUpdate() {
 	keys = SDL_GetKeyboardState(&numKeys);
 	for (int i{}; i < numKeys; i++) {
+		// For single press checks
 		keysDown[i] = false;
 		keysUp[i] = false;
 	}

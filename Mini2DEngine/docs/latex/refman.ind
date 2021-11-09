@@ -1,0 +1,433 @@
+\begin{theindex}
+
+  \item {$\sim$KeyboardInput}
+    \subitem {IO::KeyboardInput}, \hyperpage{8}
+  \item {$\sim$Object}
+    \subitem {GameObj::Object}, \hyperpage{14}
+  \item {$\sim$Room}
+    \subitem {GameRoom::Room}, \hyperpage{24}
+  \item {$\sim$RoomManager}
+    \subitem {GameRoom::RoomManager}, \hyperpage{27}
+  \item {$\sim$Sprite}
+    \subitem {GameSpr::Sprite}, \hyperpage{29}
+  \item {$\sim$Text}
+    \subitem {GameText::Text}, \hyperpage{34}
+  \item {$\sim$TextManager}
+    \subitem {GameText::TextManager}, \hyperpage{37}
+
+  \indexspace
+
+  \item {addObject}
+    \subitem {GameRoom::Room}, \hyperpage{24}
+  \item {addRoom}
+    \subitem {GameRoom::RoomManager}, \hyperpage{27}
+  \item {addX}
+    \subitem {GameObj::Object}, \hyperpage{15}
+  \item {addY}
+    \subitem {GameObj::Object}, \hyperpage{15}
+
+  \indexspace
+
+  \item {changeMessage}
+    \subitem {GameText::Text}, \hyperpage{34}
+  \item {check\_collision}
+    \subitem {GameObj::Object}, \hyperpage{15}
+  \item {choose}
+    \subitem {Utilities.h}, \hyperpage{52}
+  \item {create}
+    \subitem {GameObj::Object}, \hyperpage{15}
+  \item {createObject}
+    \subitem {GameObj::ObjectManager}, \hyperpage{20}
+  \item {createText}
+    \subitem {GameText::TextManager}, \hyperpage{38}
+
+  \indexspace
+
+  \item {degToRad}
+    \subitem {Utilities.h}, \hyperpage{52}
+  \item {destroy}
+    \subitem {GameObj::Object}, \hyperpage{15}
+  \item {destroyObject}
+    \subitem {GameObj::ObjectManager}, \hyperpage{20}
+  \item {destroyRoom}
+    \subitem {GameRoom::RoomManager}, \hyperpage{27}
+  \item {destroyText}
+    \subitem {GameText::TextManager}, \hyperpage{38}
+  \item {dirLenToVector}
+    \subitem {Utilities.h}, \hyperpage{53}
+  \item {draw}
+    \subitem {GameObj::Object}, \hyperpage{16}
+    \subitem {GameObj::ObjectManager}, \hyperpage{21}
+    \subitem {GameSpr::Sprite}, \hyperpage{30}
+    \subitem {GameText::Text}, \hyperpage{35}
+    \subitem {Main.cpp}, \hyperpage{51}
+  \item {drawExt}
+    \subitem {GameText::Text}, \hyperpage{35}
+
+  \indexspace
+
+  \item {endUpdate}
+    \subitem {GameObj::Object}, \hyperpage{16}
+    \subitem {IO::KeyboardInput}, \hyperpage{8}
+    \subitem {IO::MouseInput}, \hyperpage{10}
+
+  \indexspace
+
+  \item {GameObj::GameManager}, \hyperpage{7}
+  \item {GameObj::Object}, \hyperpage{13}
+    \subitem {$\sim$Object}, \hyperpage{14}
+    \subitem {addX}, \hyperpage{15}
+    \subitem {addY}, \hyperpage{15}
+    \subitem {check\_collision}, \hyperpage{15}
+    \subitem {create}, \hyperpage{15}
+    \subitem {destroy}, \hyperpage{15}
+    \subitem {draw}, \hyperpage{16}
+    \subitem {endUpdate}, \hyperpage{16}
+    \subitem {getColMask}, \hyperpage{16}
+    \subitem {getDirection}, \hyperpage{16}
+    \subitem {getHasSpr}, \hyperpage{16}
+    \subitem {getPersistent}, \hyperpage{16}
+    \subitem {getRoom}, \hyperpage{16}
+    \subitem {getSprite}, \hyperpage{16}
+    \subitem {getSpritePath}, \hyperpage{17}
+    \subitem {getToDestruct}, \hyperpage{17}
+    \subitem {getX}, \hyperpage{17}
+    \subitem {getY}, \hyperpage{17}
+    \subitem {Object}, \hyperpage{14}
+    \subitem {selfDestruct}, \hyperpage{17}
+    \subitem {setDirection}, \hyperpage{17}
+    \subitem {setRoom}, \hyperpage{18}
+    \subitem {setRoomEnd}, \hyperpage{18}
+    \subitem {setSprite}, \hyperpage{18}
+    \subitem {setX}, \hyperpage{18}
+    \subitem {setXY}, \hyperpage{19}
+    \subitem {setY}, \hyperpage{19}
+    \subitem {update}, \hyperpage{19}
+  \item {GameObj::ObjectManager}, \hyperpage{19}
+    \subitem {createObject}, \hyperpage{20}
+    \subitem {destroyObject}, \hyperpage{20}
+    \subitem {draw}, \hyperpage{21}
+    \subitem {getNumObj}, \hyperpage{21}
+    \subitem {getObject}, \hyperpage{21}
+    \subitem {getRenderer}, \hyperpage{21}
+    \subitem {gotoRoom}, \hyperpage{22}
+    \subitem {instance\_find}, \hyperpage{22}
+    \subitem {instance\_list}, \hyperpage{22}
+    \subitem {nextRoom}, \hyperpage{23}
+    \subitem {restartRoom}, \hyperpage{23}
+    \subitem {update}, \hyperpage{23}
+  \item {GameObjects.h}, \hyperpage{41}
+    \subitem {max\_obj}, \hyperpage{41}
+  \item {GameRoom::Room}, \hyperpage{23}
+    \subitem {$\sim$Room}, \hyperpage{24}
+    \subitem {addObject}, \hyperpage{24}
+    \subitem {getHeight}, \hyperpage{25}
+    \subitem {getName}, \hyperpage{25}
+    \subitem {getNumObjs}, \hyperpage{25}
+    \subitem {getObjectIndexFromArray}, \hyperpage{25}
+    \subitem {getPath}, \hyperpage{25}
+    \subitem {getWidth}, \hyperpage{25}
+    \subitem {removeObject}, \hyperpage{25}
+    \subitem {Room}, \hyperpage{24}
+    \subitem {roomStart}, \hyperpage{26}
+  \item {GameRoom::RoomManager}, \hyperpage{26}
+    \subitem {$\sim$RoomManager}, \hyperpage{27}
+    \subitem {addRoom}, \hyperpage{27}
+    \subitem {destroyRoom}, \hyperpage{27}
+    \subitem {getCurrentRoom}, \hyperpage{27}
+    \subitem {getNumRooms}, \hyperpage{27}
+    \subitem {getRoomName}, \hyperpage{28}
+    \subitem {getRoomPointer}, \hyperpage{28}
+    \subitem {restartRoom}, \hyperpage{28}
+    \subitem {RoomManager}, \hyperpage{27}
+    \subitem {selectRoom}, \hyperpage{28}
+  \item {GameRooms.h}, \hyperpage{43}
+    \subitem {max\_room\_obj}, \hyperpage{44}
+    \subitem {max\_rooms}, \hyperpage{44}
+  \item {GameSpr::Sprite}, \hyperpage{29}
+    \subitem {$\sim$Sprite}, \hyperpage{29}
+    \subitem {draw}, \hyperpage{30}
+    \subitem {getAngle}, \hyperpage{30}
+    \subitem {getHeight}, \hyperpage{30}
+    \subitem {getName}, \hyperpage{31}
+    \subitem {getPath}, \hyperpage{31}
+    \subitem {getSpriteDetails}, \hyperpage{31}
+    \subitem {getWidth}, \hyperpage{31}
+    \subitem {setAngle}, \hyperpage{31}
+    \subitem {Sprite}, \hyperpage{29}
+  \item {GameSprites.h}, \hyperpage{45}
+    \subitem {rectIntersect}, \hyperpage{46}
+    \subitem {validateDetails}, \hyperpage{46}
+  \item {GameText.h}, \hyperpage{47}
+    \subitem {max\_texts}, \hyperpage{47}
+  \item {GameText::Text}, \hyperpage{33}
+    \subitem {$\sim$Text}, \hyperpage{34}
+    \subitem {changeMessage}, \hyperpage{34}
+    \subitem {draw}, \hyperpage{35}
+    \subitem {drawExt}, \hyperpage{35}
+    \subitem {getAngle}, \hyperpage{36}
+    \subitem {index}, \hyperpage{36}
+    \subitem {setAngle}, \hyperpage{36}
+    \subitem {Text}, \hyperpage{33, 34}
+  \item {GameText::TextManager}, \hyperpage{37}
+    \subitem {$\sim$TextManager}, \hyperpage{37}
+    \subitem {createText}, \hyperpage{38}
+    \subitem {destroyText}, \hyperpage{38}
+    \subitem {TextManager}, \hyperpage{37}
+  \item {getAngle}
+    \subitem {GameSpr::Sprite}, \hyperpage{30}
+    \subitem {GameText::Text}, \hyperpage{36}
+  \item {getColMask}
+    \subitem {GameObj::Object}, \hyperpage{16}
+  \item {getCurrentRoom}
+    \subitem {GameRoom::RoomManager}, \hyperpage{27}
+  \item {getDirection}
+    \subitem {GameObj::Object}, \hyperpage{16}
+  \item {getHasSpr}
+    \subitem {GameObj::Object}, \hyperpage{16}
+  \item {getHeight}
+    \subitem {GameRoom::Room}, \hyperpage{25}
+    \subitem {GameSpr::Sprite}, \hyperpage{30}
+  \item {getKey}
+    \subitem {IO::KeyboardInput}, \hyperpage{8}
+  \item {getKeyDown}
+    \subitem {IO::KeyboardInput}, \hyperpage{8}
+  \item {getKeyUp}
+    \subitem {IO::KeyboardInput}, \hyperpage{9}
+  \item {getLeftButton}
+    \subitem {IO::MouseInput}, \hyperpage{10}
+  \item {getLeftButtonDown}
+    \subitem {IO::MouseInput}, \hyperpage{11}
+  \item {getLeftButtonUp}
+    \subitem {IO::MouseInput}, \hyperpage{11}
+  \item {getName}
+    \subitem {GameRoom::Room}, \hyperpage{25}
+    \subitem {GameSpr::Sprite}, \hyperpage{31}
+  \item {getNumObj}
+    \subitem {GameObj::ObjectManager}, \hyperpage{21}
+  \item {getNumObjs}
+    \subitem {GameRoom::Room}, \hyperpage{25}
+  \item {getNumRooms}
+    \subitem {GameRoom::RoomManager}, \hyperpage{27}
+  \item {getObject}
+    \subitem {GameObj::ObjectManager}, \hyperpage{21}
+  \item {getObjectIndexFromArray}
+    \subitem {GameRoom::Room}, \hyperpage{25}
+  \item {getPath}
+    \subitem {GameRoom::Room}, \hyperpage{25}
+    \subitem {GameSpr::Sprite}, \hyperpage{31}
+  \item {getPersistent}
+    \subitem {GameObj::Object}, \hyperpage{16}
+  \item {getRenderer}
+    \subitem {GameObj::ObjectManager}, \hyperpage{21}
+  \item {getRightButton}
+    \subitem {IO::MouseInput}, \hyperpage{11}
+  \item {getRightButtonDown}
+    \subitem {IO::MouseInput}, \hyperpage{11}
+  \item {getRightButtonUp}
+    \subitem {IO::MouseInput}, \hyperpage{11}
+  \item {getRoom}
+    \subitem {GameObj::Object}, \hyperpage{16}
+  \item {getRoomName}
+    \subitem {GameRoom::RoomManager}, \hyperpage{28}
+  \item {getRoomPointer}
+    \subitem {GameRoom::RoomManager}, \hyperpage{28}
+  \item {getSprite}
+    \subitem {GameObj::Object}, \hyperpage{16}
+  \item {getSpriteDetails}
+    \subitem {GameSpr::Sprite}, \hyperpage{31}
+  \item {getSpritePath}
+    \subitem {GameObj::Object}, \hyperpage{17}
+  \item {getStringFromFile}
+    \subitem {Utilities.h}, \hyperpage{53}
+  \item {getToDestruct}
+    \subitem {GameObj::Object}, \hyperpage{17}
+  \item {getWidth}
+    \subitem {GameRoom::Room}, \hyperpage{25}
+    \subitem {GameSpr::Sprite}, \hyperpage{31}
+  \item {getX}
+    \subitem {GameObj::Object}, \hyperpage{17}
+    \subitem {IO::MouseInput}, \hyperpage{11}
+  \item {getY}
+    \subitem {GameObj::Object}, \hyperpage{17}
+    \subitem {IO::MouseInput}, \hyperpage{11}
+  \item {gotoRoom}
+    \subitem {GameObj::ObjectManager}, \hyperpage{22}
+
+  \indexspace
+
+  \item {index}
+    \subitem {GameText::Text}, \hyperpage{36}
+  \item {init}
+    \subitem {Main.cpp}, \hyperpage{51}
+  \item {instance\_find}
+    \subitem {GameObj::ObjectManager}, \hyperpage{22}
+  \item {instance\_list}
+    \subitem {GameObj::ObjectManager}, \hyperpage{22}
+  \item {IO::KeyboardInput}, \hyperpage{7}
+    \subitem {$\sim$KeyboardInput}, \hyperpage{8}
+    \subitem {endUpdate}, \hyperpage{8}
+    \subitem {getKey}, \hyperpage{8}
+    \subitem {getKeyDown}, \hyperpage{8}
+    \subitem {getKeyUp}, \hyperpage{9}
+    \subitem {KeyboardInput}, \hyperpage{8}
+    \subitem {setKeyDown}, \hyperpage{9}
+    \subitem {setKeyUp}, \hyperpage{9}
+  \item {IO::MouseInput}, \hyperpage{9}
+    \subitem {endUpdate}, \hyperpage{10}
+    \subitem {getLeftButton}, \hyperpage{10}
+    \subitem {getLeftButtonDown}, \hyperpage{11}
+    \subitem {getLeftButtonUp}, \hyperpage{11}
+    \subitem {getRightButton}, \hyperpage{11}
+    \subitem {getRightButtonDown}, \hyperpage{11}
+    \subitem {getRightButtonUp}, \hyperpage{11}
+    \subitem {getX}, \hyperpage{11}
+    \subitem {getY}, \hyperpage{11}
+    \subitem {MouseInput}, \hyperpage{10}
+    \subitem {setLeftButton}, \hyperpage{11}
+    \subitem {setLeftButtonDown}, \hyperpage{12}
+    \subitem {setLeftButtonUp}, \hyperpage{12}
+    \subitem {setRightButton}, \hyperpage{12}
+    \subitem {setRightButtonDown}, \hyperpage{12}
+    \subitem {setRightButtonUp}, \hyperpage{12}
+    \subitem {setX}, \hyperpage{12}
+    \subitem {setY}, \hyperpage{12}
+  \item {IOHandlers.h}, \hyperpage{49}
+
+  \indexspace
+
+  \item {KeyboardInput}
+    \subitem {IO::KeyboardInput}, \hyperpage{8}
+  \item {kill}
+    \subitem {Main.cpp}, \hyperpage{51}
+
+  \indexspace
+
+  \item {main}
+    \subitem {Main.cpp}, \hyperpage{51}
+  \item {Main.cpp}, \hyperpage{50}
+    \subitem {draw}, \hyperpage{51}
+    \subitem {init}, \hyperpage{51}
+    \subitem {kill}, \hyperpage{51}
+    \subitem {main}, \hyperpage{51}
+    \subitem {update}, \hyperpage{51}
+  \item {max\_obj}
+    \subitem {GameObjects.h}, \hyperpage{41}
+  \item {max\_room\_obj}
+    \subitem {GameRooms.h}, \hyperpage{44}
+  \item {max\_rooms}
+    \subitem {GameRooms.h}, \hyperpage{44}
+  \item {max\_texts}
+    \subitem {GameText.h}, \hyperpage{47}
+  \item {MouseInput}
+    \subitem {IO::MouseInput}, \hyperpage{10}
+
+  \indexspace
+
+  \item {nextRoom}
+    \subitem {GameObj::ObjectManager}, \hyperpage{23}
+
+  \indexspace
+
+  \item {Object}
+    \subitem {GameObj::Object}, \hyperpage{14}
+
+  \indexspace
+
+  \item {parseJSON}
+    \subitem {Utilities.h}, \hyperpage{53}
+  \item {pi}
+    \subitem {Utilities.h}, \hyperpage{54}
+
+  \indexspace
+
+  \item {randDouble}
+    \subitem {Utilities.h}, \hyperpage{54}
+  \item {rectIntersect}
+    \subitem {GameSprites.h}, \hyperpage{46}
+  \item {removeObject}
+    \subitem {GameRoom::Room}, \hyperpage{25}
+  \item {restartRoom}
+    \subitem {GameObj::ObjectManager}, \hyperpage{23}
+    \subitem {GameRoom::RoomManager}, \hyperpage{28}
+  \item {Room}
+    \subitem {GameRoom::Room}, \hyperpage{24}
+  \item {RoomManager}
+    \subitem {GameRoom::RoomManager}, \hyperpage{27}
+  \item {roomStart}
+    \subitem {GameRoom::Room}, \hyperpage{26}
+
+  \indexspace
+
+  \item {selectRoom}
+    \subitem {GameRoom::RoomManager}, \hyperpage{28}
+  \item {selfDestruct}
+    \subitem {GameObj::Object}, \hyperpage{17}
+  \item {setAngle}
+    \subitem {GameSpr::Sprite}, \hyperpage{31}
+    \subitem {GameText::Text}, \hyperpage{36}
+  \item {setDirection}
+    \subitem {GameObj::Object}, \hyperpage{17}
+  \item {setKeyDown}
+    \subitem {IO::KeyboardInput}, \hyperpage{9}
+  \item {setKeyUp}
+    \subitem {IO::KeyboardInput}, \hyperpage{9}
+  \item {setLeftButton}
+    \subitem {IO::MouseInput}, \hyperpage{11}
+  \item {setLeftButtonDown}
+    \subitem {IO::MouseInput}, \hyperpage{12}
+  \item {setLeftButtonUp}
+    \subitem {IO::MouseInput}, \hyperpage{12}
+  \item {setRightButton}
+    \subitem {IO::MouseInput}, \hyperpage{12}
+  \item {setRightButtonDown}
+    \subitem {IO::MouseInput}, \hyperpage{12}
+  \item {setRightButtonUp}
+    \subitem {IO::MouseInput}, \hyperpage{12}
+  \item {setRoom}
+    \subitem {GameObj::Object}, \hyperpage{18}
+  \item {setRoomEnd}
+    \subitem {GameObj::Object}, \hyperpage{18}
+  \item {setSprite}
+    \subitem {GameObj::Object}, \hyperpage{18}
+  \item {setX}
+    \subitem {GameObj::Object}, \hyperpage{18}
+    \subitem {IO::MouseInput}, \hyperpage{12}
+  \item {setXY}
+    \subitem {GameObj::Object}, \hyperpage{19}
+  \item {setY}
+    \subitem {GameObj::Object}, \hyperpage{19}
+    \subitem {IO::MouseInput}, \hyperpage{12}
+  \item {Sprite}, \hyperpage{32}
+    \subitem {GameSpr::Sprite}, \hyperpage{29}
+  \item {SpriteManager}, \hyperpage{32}
+
+  \indexspace
+
+  \item {Template}, \hyperpage{32}
+  \item {Text}
+    \subitem {GameText::Text}, \hyperpage{33, 34}
+  \item {TextManager}
+    \subitem {GameText::TextManager}, \hyperpage{37}
+
+  \indexspace
+
+  \item {update}
+    \subitem {GameObj::Object}, \hyperpage{19}
+    \subitem {GameObj::ObjectManager}, \hyperpage{23}
+    \subitem {Main.cpp}, \hyperpage{51}
+  \item {Utilities.h}, \hyperpage{52}
+    \subitem {choose}, \hyperpage{52}
+    \subitem {degToRad}, \hyperpage{52}
+    \subitem {dirLenToVector}, \hyperpage{53}
+    \subitem {getStringFromFile}, \hyperpage{53}
+    \subitem {parseJSON}, \hyperpage{53}
+    \subitem {pi}, \hyperpage{54}
+    \subitem {randDouble}, \hyperpage{54}
+
+  \indexspace
+
+  \item {validateDetails}
+    \subitem {GameSprites.h}, \hyperpage{46}
+
+\end{theindex}

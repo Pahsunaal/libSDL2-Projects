@@ -33,8 +33,9 @@ std::string* RoomManager::getRoomName(size_t index) {
 }
 
 bool RoomManager::selectRoom(const char* name) {
-	auto index = room_names.find(name);
+	auto index = room_names.find(name); // Checks for the name in the room_names map
 	if (index != room_names.end()) {
+		// Start room
 		current_room = index->second;
 		room_array[current_room]->roomStart();
 	}
@@ -42,13 +43,13 @@ bool RoomManager::selectRoom(const char* name) {
 }
 
 bool RoomManager::destroyRoom() {
-	delete room_array[current_room];
+	delete room_array[current_room]; // Free room
 	current_room++;
 	num_rooms--;
 	if (num_rooms > 0) {
-		room_array[current_room]->roomStart();
+		room_array[current_room]->roomStart(); // Start next room
 		return true;
-	} else return false;
+	} else return false; // End game otherwise
 }
 
 bool RoomManager::restartRoom() {
@@ -56,8 +57,8 @@ bool RoomManager::restartRoom() {
 	std::string* path = new std::string(*(room->getPath()));
 	auto func = room->creationCode;
 	delete room_array[current_room];
-	auto document = parseJSON((*path).c_str());
-	room = new Room{ path, func, document, this };
+	auto document = parseJSON((*path).c_str()); // Parse json files of properties
+	room = new Room{ path, func, document, this }; //Create a fresh copy of the room
 	room_array[current_room] = room;
 	room->roomStart();
 	return true;
@@ -65,9 +66,10 @@ bool RoomManager::restartRoom() {
 
 bool RoomManager::addRoom(std::string* roomJSON, std::function<void(Room*)> creationCode) {
 	if (num_rooms < max_rooms) {
-		auto document = parseJSON((*roomJSON).c_str());
-		Room* room = new Room{ roomJSON, creationCode, document, this };
+		auto document = parseJSON((*roomJSON).c_str()); // Parse json files of properties
+		Room* room = new Room{ roomJSON, creationCode, document, this }; 
 
+		// Add room to RoomManager array and map
 		room_array[num_rooms] = room;
 		room_names.insert(std::pair<std::string, size_t>((*document)["name"].GetString(), num_rooms));
 		num_rooms++;
@@ -111,6 +113,7 @@ bool Room::addObject(size_t* obj_index) {
 }
 
 void Room::removeObject(size_t* objToRemove) {
+	// Moves pointer if object found, but DOESN'T DELETE IT
 	size_t delIndex{};
 	for (size_t i{}; i < num_objs; i++) {
 		if (*obj_array[i] == *objToRemove) {
@@ -119,6 +122,7 @@ void Room::removeObject(size_t* objToRemove) {
 		}
 	}
 
+	// Moves other pointers fill space
 	for (size_t i{ delIndex }; i < num_objs && i < max_room_obj-1; i++) {
 		obj_array[i] = obj_array[i + 1];
 	}

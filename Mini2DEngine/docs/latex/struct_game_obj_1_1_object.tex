@@ -1,0 +1,334 @@
+\hypertarget{struct_game_obj_1_1_object}{}\doxysection{Game\+Obj\+::Object Struct Reference}
+\label{struct_game_obj_1_1_object}\index{GameObj::Object@{GameObj::Object}}
+
+
+{\ttfamily \#include $<$Game\+Objects.\+h$>$}
+
+Inheritance diagram for Game\+Obj\+::Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_game_obj_1_1_object}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_game_obj_1_1_object_a7a7aa1497dea9c7284c928800e21bd0d}{Object}} (\mbox{\hyperlink{struct_game_obj_1_1_object_manager}{Object\+Manager}} $\ast$obj\+Man, \mbox{\hyperlink{struct_game_room_1_1_room}{Game\+Room\+::\+Room}} $\ast$room, double X, double Y)
+\item 
+virtual \mbox{\hyperlink{struct_game_obj_1_1_object_ae8f5483f459e46687bd01e6f9977afd3}{$\sim$\+Object}} ()
+\item 
+virtual void \mbox{\hyperlink{struct_game_obj_1_1_object_af3347f9d1da308d4adb05ab499254848}{create}} ()
+\item 
+virtual void \mbox{\hyperlink{struct_game_obj_1_1_object_a4abd48bacb1b004c8ac891597c831f77}{update}} ()
+\item 
+virtual void \mbox{\hyperlink{struct_game_obj_1_1_object_a8662c99234ddc2ba8abb6fc89a68c18a}{end\+Update}} ()
+\item 
+virtual void \mbox{\hyperlink{struct_game_obj_1_1_object_a821f5b25b450fa1acdb3f9c0b5962592}{draw}} ()
+\item 
+virtual void \mbox{\hyperlink{struct_game_obj_1_1_object_ad14022400495b1f902037890e7a1cba8}{destroy}} ()
+\item 
+double \mbox{\hyperlink{struct_game_obj_1_1_object_a404b18c871abfbbc9ccad21b6c973e4c}{getX}} ()
+\item 
+void \mbox{\hyperlink{struct_game_obj_1_1_object_a88439eac689cff8401678f5f92e4c0c9}{setX}} (double newx)
+\item 
+double \mbox{\hyperlink{struct_game_obj_1_1_object_a922a847c3e3437d34bd001361794acb1}{getY}} ()
+\item 
+void \mbox{\hyperlink{struct_game_obj_1_1_object_a5ba7e0c451452445092bf57d4ed1d087}{setY}} (double newy)
+\item 
+void \mbox{\hyperlink{struct_game_obj_1_1_object_a28fbab3ce80c783ea824c39a22dde3c0}{set\+XY}} (double newx, double newy)
+\item 
+void \mbox{\hyperlink{struct_game_obj_1_1_object_ab131c735ab1e630a9380ed4cec7cbe78}{addX}} (double add)
+\item 
+void \mbox{\hyperlink{struct_game_obj_1_1_object_ace8291c18f456ff6800e5ba81f90ce6e}{addY}} (double add)
+\item 
+double \mbox{\hyperlink{struct_game_obj_1_1_object_a286c25560a8ef7fcc788e67f8b992fb8}{get\+Direction}} ()
+\item 
+void \mbox{\hyperlink{struct_game_obj_1_1_object_adce31cae18c7fea5eeaa3d9a94664fa4}{set\+Direction}} (double newdirection)
+\item 
+SDL\+\_\+\+Rect $\ast$ \mbox{\hyperlink{struct_game_obj_1_1_object_adf112b0e44e538e07f2a664b4ccc96fb}{get\+Col\+Mask}} ()
+\item 
+bool \mbox{\hyperlink{struct_game_obj_1_1_object_a5c31bbfdbe84c23494570be110b465e2}{set\+Sprite}} (std\+::string $\ast$path)
+\item 
+bool \mbox{\hyperlink{struct_game_obj_1_1_object_a46ed29d56bec9f87513e32428c94fcdd}{get\+Has\+Spr}} ()
+\item 
+const char $\ast$ \mbox{\hyperlink{struct_game_obj_1_1_object_aca44fc1491c6136262b470e3185e3cdf}{get\+Sprite\+Path}} ()
+\item 
+\mbox{\hyperlink{struct_game_spr_1_1_sprite}{Game\+Spr\+::\+Sprite}} $\ast$ \mbox{\hyperlink{struct_game_obj_1_1_object_a75b92bf0cf6e59bc736e16282bd79c09}{get\+Sprite}} ()
+\item 
+void \mbox{\hyperlink{struct_game_obj_1_1_object_a6f4bc9867f1ae462df4c6713e1428bed}{set\+Room}} (\mbox{\hyperlink{struct_game_room_1_1_room}{Game\+Room\+::\+Room}} $\ast$newroom)
+\item 
+void \mbox{\hyperlink{struct_game_obj_1_1_object_add4d3f5e3cab5cce6288dac2b7553b40}{set\+Room\+End}} ()
+\item 
+\mbox{\hyperlink{struct_game_room_1_1_room}{Game\+Room\+::\+Room}} $\ast$ \mbox{\hyperlink{struct_game_obj_1_1_object_a6d98320a4f51a94f2fd0486ce561a7d0}{get\+Room}} ()
+\item 
+void \mbox{\hyperlink{struct_game_obj_1_1_object_a4bcbe1e98d628c55fbc92c16ed656073}{self\+Destruct}} ()
+\item 
+bool \mbox{\hyperlink{struct_game_obj_1_1_object_ae4cfa7cd5af810d00e0263fdd8a7b5c8}{get\+Persistent}} ()
+\item 
+bool \mbox{\hyperlink{struct_game_obj_1_1_object_aab9be940979aa86e2d2a3aca2056fcb5}{get\+To\+Destruct}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \mbox{\hyperlink{struct_game_obj_1_1_object_aef332846120923c0b9a3b3efa070ecb0}{check\+\_\+collision}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_game_obj_1_1_object_a0c94779802012a9ea026d5d7aa20a1f1}\label{struct_game_obj_1_1_object_a0c94779802012a9ea026d5d7aa20a1f1}} 
+size\+\_\+t {\bfseries index}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_game_obj_1_1_object_a47ef2dd127d7f700e4b8525fea7d93b9}\label{struct_game_obj_1_1_object_a47ef2dd127d7f700e4b8525fea7d93b9}} 
+\mbox{\hyperlink{struct_game_obj_1_1_object_manager}{Object\+Manager}} $\ast$ {\bfseries obj\+Man}
+\item 
+\mbox{\Hypertarget{struct_game_obj_1_1_object_a77f4d2fe6c63a93abeb4699cd0fab58d}\label{struct_game_obj_1_1_object_a77f4d2fe6c63a93abeb4699cd0fab58d}} 
+\mbox{\hyperlink{struct_game_room_1_1_room}{Game\+Room\+::\+Room}} $\ast$ {\bfseries room}
+\item 
+\mbox{\Hypertarget{struct_game_obj_1_1_object_a164aa8617b886e14c43ce689eb1bbb0b}\label{struct_game_obj_1_1_object_a164aa8617b886e14c43ce689eb1bbb0b}} 
+bool {\bfseries persistent}
+\item 
+\mbox{\Hypertarget{struct_game_obj_1_1_object_a72aa98a9d2ede3a4b0089de9e15218df}\label{struct_game_obj_1_1_object_a72aa98a9d2ede3a4b0089de9e15218df}} 
+bool {\bfseries room\+\_\+end}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A Game\+Object, the base unit on which all objects within a game are built on 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_a7a7aa1497dea9c7284c928800e21bd0d}\label{struct_game_obj_1_1_object_a7a7aa1497dea9c7284c928800e21bd0d}} 
+\index{GameObj::Object@{GameObj::Object}!Object@{Object}}
+\index{Object@{Object}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{Object()}{Object()}}
+{\footnotesize\ttfamily Object\+::\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_obj_1_1_object_manager}{Object\+Manager}} $\ast$}]{obj\+Man,  }\item[{\mbox{\hyperlink{struct_game_room_1_1_room}{Game\+Room\+::\+Room}} $\ast$}]{room,  }\item[{double}]{X,  }\item[{double}]{Y }\end{DoxyParamCaption})}
+
+Constructs an \mbox{\hyperlink{struct_game_obj_1_1_object}{Object}}, use within the class prototype of a derived class 
+\begin{DoxyParams}{Parameters}
+{\em obj\+Man} & Pointer to the \mbox{\hyperlink{struct_game_obj_1_1_object_manager}{Object\+Manager}} \\
+\hline
+{\em room} & pointer to the room that the object is in \\
+\hline
+{\em X} & the x value in the room that the object starts at \\
+\hline
+{\em Y} & the y value in the room that the object starts at \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_ae8f5483f459e46687bd01e6f9977afd3}\label{struct_game_obj_1_1_object_ae8f5483f459e46687bd01e6f9977afd3}} 
+\index{GameObj::Object@{GameObj::Object}!````~Object@{$\sim$Object}}
+\index{````~Object@{$\sim$Object}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{$\sim$Object()}{~Object()}}
+{\footnotesize\ttfamily Object\+::$\sim$\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destroy an object. Overrideable, required for overriding \mbox{\hyperlink{struct_game_obj_1_1_object_ad14022400495b1f902037890e7a1cba8}{Object.\+destroy()}} with the derived class. See Game\+Objects.\+cpp for an example (Asteroid) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_ab131c735ab1e630a9380ed4cec7cbe78}\label{struct_game_obj_1_1_object_ab131c735ab1e630a9380ed4cec7cbe78}} 
+\index{GameObj::Object@{GameObj::Object}!addX@{addX}}
+\index{addX@{addX}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{addX()}{addX()}}
+{\footnotesize\ttfamily void Object\+::addX (\begin{DoxyParamCaption}\item[{double}]{add }\end{DoxyParamCaption})}
+
+Add a value to the x position of the object 
+\begin{DoxyParams}{Parameters}
+{\em add} & the amount to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_ace8291c18f456ff6800e5ba81f90ce6e}\label{struct_game_obj_1_1_object_ace8291c18f456ff6800e5ba81f90ce6e}} 
+\index{GameObj::Object@{GameObj::Object}!addY@{addY}}
+\index{addY@{addY}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{addY()}{addY()}}
+{\footnotesize\ttfamily void Object\+::addY (\begin{DoxyParamCaption}\item[{double}]{add }\end{DoxyParamCaption})}
+
+Add a value to the y position of the object 
+\begin{DoxyParams}{Parameters}
+{\em add} & the amount to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_aef332846120923c0b9a3b3efa070ecb0}\label{struct_game_obj_1_1_object_aef332846120923c0b9a3b3efa070ecb0}} 
+\index{GameObj::Object@{GameObj::Object}!check\_collision@{check\_collision}}
+\index{check\_collision@{check\_collision}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{check\_collision()}{check\_collision()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ Object\+::check\+\_\+collision}
+
+Check if the object is colliding with an object of type T using both object\textquotesingle{}s collision masks 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of the Game\+Object to check for collisions with \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_af3347f9d1da308d4adb05ab499254848}\label{struct_game_obj_1_1_object_af3347f9d1da308d4adb05ab499254848}} 
+\index{GameObj::Object@{GameObj::Object}!create@{create}}
+\index{create@{create}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily void Object\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The Create event of an object. Overrideable \mbox{\Hypertarget{struct_game_obj_1_1_object_ad14022400495b1f902037890e7a1cba8}\label{struct_game_obj_1_1_object_ad14022400495b1f902037890e7a1cba8}} 
+\index{GameObj::Object@{GameObj::Object}!destroy@{destroy}}
+\index{destroy@{destroy}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void Object\+::destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The Destroy event of an object. Overrideable. Use in conjunction with an overriden \mbox{\hyperlink{struct_game_obj_1_1_object_ae8f5483f459e46687bd01e6f9977afd3}{$\sim$\+Object()}} for derived classes \mbox{\Hypertarget{struct_game_obj_1_1_object_a821f5b25b450fa1acdb3f9c0b5962592}\label{struct_game_obj_1_1_object_a821f5b25b450fa1acdb3f9c0b5962592}} 
+\index{GameObj::Object@{GameObj::Object}!draw@{draw}}
+\index{draw@{draw}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Object\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The Draw event of an object. Overrideable \mbox{\Hypertarget{struct_game_obj_1_1_object_a8662c99234ddc2ba8abb6fc89a68c18a}\label{struct_game_obj_1_1_object_a8662c99234ddc2ba8abb6fc89a68c18a}} 
+\index{GameObj::Object@{GameObj::Object}!endUpdate@{endUpdate}}
+\index{endUpdate@{endUpdate}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{endUpdate()}{endUpdate()}}
+{\footnotesize\ttfamily void Object\+::end\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The End update event of an object. Overrideable \mbox{\Hypertarget{struct_game_obj_1_1_object_adf112b0e44e538e07f2a664b4ccc96fb}\label{struct_game_obj_1_1_object_adf112b0e44e538e07f2a664b4ccc96fb}} 
+\index{GameObj::Object@{GameObj::Object}!getColMask@{getColMask}}
+\index{getColMask@{getColMask}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{getColMask()}{getColMask()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect $\ast$ Object\+::get\+Col\+Mask (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return the collision mask of the object, which is based on its sprite data \mbox{\Hypertarget{struct_game_obj_1_1_object_a286c25560a8ef7fcc788e67f8b992fb8}\label{struct_game_obj_1_1_object_a286c25560a8ef7fcc788e67f8b992fb8}} 
+\index{GameObj::Object@{GameObj::Object}!getDirection@{getDirection}}
+\index{getDirection@{getDirection}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{getDirection()}{getDirection()}}
+{\footnotesize\ttfamily double Object\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the direction of the object in degrees (it\textquotesingle{}s rotation) \mbox{\Hypertarget{struct_game_obj_1_1_object_a46ed29d56bec9f87513e32428c94fcdd}\label{struct_game_obj_1_1_object_a46ed29d56bec9f87513e32428c94fcdd}} 
+\index{GameObj::Object@{GameObj::Object}!getHasSpr@{getHasSpr}}
+\index{getHasSpr@{getHasSpr}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{getHasSpr()}{getHasSpr()}}
+{\footnotesize\ttfamily bool Object\+::get\+Has\+Spr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return whether the object has a sprite \mbox{\Hypertarget{struct_game_obj_1_1_object_ae4cfa7cd5af810d00e0263fdd8a7b5c8}\label{struct_game_obj_1_1_object_ae4cfa7cd5af810d00e0263fdd8a7b5c8}} 
+\index{GameObj::Object@{GameObj::Object}!getPersistent@{getPersistent}}
+\index{getPersistent@{getPersistent}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{getPersistent()}{getPersistent()}}
+{\footnotesize\ttfamily bool Object\+::get\+Persistent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return whether the object is persistsent \mbox{\Hypertarget{struct_game_obj_1_1_object_a6d98320a4f51a94f2fd0486ce561a7d0}\label{struct_game_obj_1_1_object_a6d98320a4f51a94f2fd0486ce561a7d0}} 
+\index{GameObj::Object@{GameObj::Object}!getRoom@{getRoom}}
+\index{getRoom@{getRoom}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{getRoom()}{getRoom()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_game_room_1_1_room}{Game\+Room\+::\+Room}} $\ast$ Object\+::get\+Room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get a pointer to the room the object is tied to \mbox{\Hypertarget{struct_game_obj_1_1_object_a75b92bf0cf6e59bc736e16282bd79c09}\label{struct_game_obj_1_1_object_a75b92bf0cf6e59bc736e16282bd79c09}} 
+\index{GameObj::Object@{GameObj::Object}!getSprite@{getSprite}}
+\index{getSprite@{getSprite}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{getSprite()}{getSprite()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_game_spr_1_1_sprite}{Sprite}} $\ast$ Object\+::get\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get a pointer to the object\textquotesingle{}s sprite \mbox{\Hypertarget{struct_game_obj_1_1_object_aca44fc1491c6136262b470e3185e3cdf}\label{struct_game_obj_1_1_object_aca44fc1491c6136262b470e3185e3cdf}} 
+\index{GameObj::Object@{GameObj::Object}!getSpritePath@{getSpritePath}}
+\index{getSpritePath@{getSpritePath}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{getSpritePath()}{getSpritePath()}}
+{\footnotesize\ttfamily const char $\ast$ Object\+::get\+Sprite\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the path to the object\textquotesingle{}s sprite \mbox{\Hypertarget{struct_game_obj_1_1_object_aab9be940979aa86e2d2a3aca2056fcb5}\label{struct_game_obj_1_1_object_aab9be940979aa86e2d2a3aca2056fcb5}} 
+\index{GameObj::Object@{GameObj::Object}!getToDestruct@{getToDestruct}}
+\index{getToDestruct@{getToDestruct}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{getToDestruct()}{getToDestruct()}}
+{\footnotesize\ttfamily bool Object\+::get\+To\+Destruct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return whether the object is going to be destroyed in the next update \mbox{\Hypertarget{struct_game_obj_1_1_object_a404b18c871abfbbc9ccad21b6c973e4c}\label{struct_game_obj_1_1_object_a404b18c871abfbbc9ccad21b6c973e4c}} 
+\index{GameObj::Object@{GameObj::Object}!getX@{getX}}
+\index{getX@{getX}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily double Object\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the x position of the object in the room \mbox{\Hypertarget{struct_game_obj_1_1_object_a922a847c3e3437d34bd001361794acb1}\label{struct_game_obj_1_1_object_a922a847c3e3437d34bd001361794acb1}} 
+\index{GameObj::Object@{GameObj::Object}!getY@{getY}}
+\index{getY@{getY}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily double Object\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the y position of the object in the room \mbox{\Hypertarget{struct_game_obj_1_1_object_a4bcbe1e98d628c55fbc92c16ed656073}\label{struct_game_obj_1_1_object_a4bcbe1e98d628c55fbc92c16ed656073}} 
+\index{GameObj::Object@{GameObj::Object}!selfDestruct@{selfDestruct}}
+\index{selfDestruct@{selfDestruct}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{selfDestruct()}{selfDestruct()}}
+{\footnotesize\ttfamily void Object\+::self\+Destruct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Trigger the object to destroy itself in the next update \mbox{\Hypertarget{struct_game_obj_1_1_object_adce31cae18c7fea5eeaa3d9a94664fa4}\label{struct_game_obj_1_1_object_adce31cae18c7fea5eeaa3d9a94664fa4}} 
+\index{GameObj::Object@{GameObj::Object}!setDirection@{setDirection}}
+\index{setDirection@{setDirection}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{setDirection()}{setDirection()}}
+{\footnotesize\ttfamily void Object\+::set\+Direction (\begin{DoxyParamCaption}\item[{double}]{newdirection }\end{DoxyParamCaption})}
+
+Set the direction of the object 
+\begin{DoxyParams}{Parameters}
+{\em newdirection} & the angle of direction \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_a6f4bc9867f1ae462df4c6713e1428bed}\label{struct_game_obj_1_1_object_a6f4bc9867f1ae462df4c6713e1428bed}} 
+\index{GameObj::Object@{GameObj::Object}!setRoom@{setRoom}}
+\index{setRoom@{setRoom}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{setRoom()}{setRoom()}}
+{\footnotesize\ttfamily void Object\+::set\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_room_1_1_room}{Game\+Room\+::\+Room}} $\ast$}]{newroom }\end{DoxyParamCaption})}
+
+Change to room the object is \textquotesingle{}in\textquotesingle{}. This means which object array the object is in. This is set to nullptr for a persistent object that has lost its original room 
+\begin{DoxyParams}{Parameters}
+{\em newroom} & a pointer to the room \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_add4d3f5e3cab5cce6288dac2b7553b40}\label{struct_game_obj_1_1_object_add4d3f5e3cab5cce6288dac2b7553b40}} 
+\index{GameObj::Object@{GameObj::Object}!setRoomEnd@{setRoomEnd}}
+\index{setRoomEnd@{setRoomEnd}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{setRoomEnd()}{setRoomEnd()}}
+{\footnotesize\ttfamily void Object\+::set\+Room\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Set the room\+\_\+end flag to true -\/ this flag is helpful in indicating that an object should act differently depending on whether it is being destroyed as part of game code, or simply the room/game ending. It is important to set this appropriately \mbox{\Hypertarget{struct_game_obj_1_1_object_a5c31bbfdbe84c23494570be110b465e2}\label{struct_game_obj_1_1_object_a5c31bbfdbe84c23494570be110b465e2}} 
+\index{GameObj::Object@{GameObj::Object}!setSprite@{setSprite}}
+\index{setSprite@{setSprite}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{setSprite()}{setSprite()}}
+{\footnotesize\ttfamily bool Object\+::set\+Sprite (\begin{DoxyParamCaption}\item[{std\+::string $\ast$}]{path }\end{DoxyParamCaption})}
+
+Set the sprite of the object 
+\begin{DoxyParams}{Parameters}
+{\em path} & the path of the new sprite \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_a88439eac689cff8401678f5f92e4c0c9}\label{struct_game_obj_1_1_object_a88439eac689cff8401678f5f92e4c0c9}} 
+\index{GameObj::Object@{GameObj::Object}!setX@{setX}}
+\index{setX@{setX}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{setX()}{setX()}}
+{\footnotesize\ttfamily void Object\+::setX (\begin{DoxyParamCaption}\item[{double}]{newx }\end{DoxyParamCaption})}
+
+Set the x position of the object 
+\begin{DoxyParams}{Parameters}
+{\em newx} & the x value in the room \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_a28fbab3ce80c783ea824c39a22dde3c0}\label{struct_game_obj_1_1_object_a28fbab3ce80c783ea824c39a22dde3c0}} 
+\index{GameObj::Object@{GameObj::Object}!setXY@{setXY}}
+\index{setXY@{setXY}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{setXY()}{setXY()}}
+{\footnotesize\ttfamily void Object\+::set\+XY (\begin{DoxyParamCaption}\item[{double}]{newx,  }\item[{double}]{newy }\end{DoxyParamCaption})}
+
+Set the x and y position of the object 
+\begin{DoxyParams}{Parameters}
+{\em newx} & the x value in the room \\
+\hline
+{\em newx} & the y value in the room \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_a5ba7e0c451452445092bf57d4ed1d087}\label{struct_game_obj_1_1_object_a5ba7e0c451452445092bf57d4ed1d087}} 
+\index{GameObj::Object@{GameObj::Object}!setY@{setY}}
+\index{setY@{setY}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{setY()}{setY()}}
+{\footnotesize\ttfamily void Object\+::setY (\begin{DoxyParamCaption}\item[{double}]{newy }\end{DoxyParamCaption})}
+
+Set the y position of the object 
+\begin{DoxyParams}{Parameters}
+{\em newx} & the y value in the room \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_obj_1_1_object_a4abd48bacb1b004c8ac891597c831f77}\label{struct_game_obj_1_1_object_a4abd48bacb1b004c8ac891597c831f77}} 
+\index{GameObj::Object@{GameObj::Object}!update@{update}}
+\index{update@{update}!GameObj::Object@{GameObj::Object}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Object\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The Update event of an object. Overrideable 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_objects_8h}{Game\+Objects.\+h}}\item 
+Game\+Objects.\+cpp\end{DoxyCompactItemize}

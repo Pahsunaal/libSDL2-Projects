@@ -1,0 +1,123 @@
+\hypertarget{struct_game_room_1_1_room_manager}{}\doxysection{Game\+Room\+::Room\+Manager Struct Reference}
+\label{struct_game_room_1_1_room_manager}\index{GameRoom::RoomManager@{GameRoom::RoomManager}}
+
+
+{\ttfamily \#include $<$Game\+Rooms.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_game_room_1_1_room_manager_a397e33c1d7fe642c1a262263b010d84e}{Room\+Manager}} ()
+\item 
+\mbox{\hyperlink{struct_game_room_1_1_room_manager_a8f3db547e6f1d5fddbf7e4c7e09e29b9}{$\sim$\+Room\+Manager}} ()
+\item 
+\mbox{\hyperlink{struct_game_room_1_1_room}{Room}} $\ast$ \mbox{\hyperlink{struct_game_room_1_1_room_manager_aad05df290ea6ca73e9d8280fbd7b5e73}{get\+Room\+Pointer}} (size\+\_\+t index)
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_game_room_1_1_room_manager_ad31973782723b5a0f662495746aeebbc}{get\+Current\+Room}} ()
+\item 
+std\+::string $\ast$ \mbox{\hyperlink{struct_game_room_1_1_room_manager_a91580442128a7e3abba6215881c74734}{get\+Room\+Name}} (size\+\_\+t index)
+\item 
+bool \mbox{\hyperlink{struct_game_room_1_1_room_manager_a86a90fbb01f21718ef95622827b7b1d9}{destroy\+Room}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_game_room_1_1_room_manager_aece3ee88280559659aee7a760f02cbf9}{get\+Num\+Rooms}} ()
+\item 
+bool \mbox{\hyperlink{struct_game_room_1_1_room_manager_a919fec989cc16e5cbaea95dc1a99886f}{select\+Room}} (const char $\ast$name)
+\item 
+bool \mbox{\hyperlink{struct_game_room_1_1_room_manager_a27c059cc495d7ff5c4201546ac7c9c3e}{restart\+Room}} ()
+\item 
+bool \mbox{\hyperlink{struct_game_room_1_1_room_manager_a4578dc22995271d9fa4aa4f31dc04e29}{add\+Room}} (std\+::string $\ast$room\+JSON, std\+::function$<$ void(\mbox{\hyperlink{struct_game_room_1_1_room}{Room}} $\ast$)$>$ creation\+Code)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{struct_game_room_1_1_room_manager}{Room\+Manager}} object -\/ stores the rooms, handles their lifetime, and manages movement between each room 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_game_room_1_1_room_manager_a397e33c1d7fe642c1a262263b010d84e}\label{struct_game_room_1_1_room_manager_a397e33c1d7fe642c1a262263b010d84e}} 
+\index{GameRoom::RoomManager@{GameRoom::RoomManager}!RoomManager@{RoomManager}}
+\index{RoomManager@{RoomManager}!GameRoom::RoomManager@{GameRoom::RoomManager}}
+\doxysubsubsection{\texorpdfstring{RoomManager()}{RoomManager()}}
+{\footnotesize\ttfamily Room\+Manager\+::\+Room\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Construct a \mbox{\hyperlink{struct_game_room_1_1_room_manager}{Room\+Manager}} object \mbox{\Hypertarget{struct_game_room_1_1_room_manager_a8f3db547e6f1d5fddbf7e4c7e09e29b9}\label{struct_game_room_1_1_room_manager_a8f3db547e6f1d5fddbf7e4c7e09e29b9}} 
+\index{GameRoom::RoomManager@{GameRoom::RoomManager}!````~RoomManager@{$\sim$RoomManager}}
+\index{````~RoomManager@{$\sim$RoomManager}!GameRoom::RoomManager@{GameRoom::RoomManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$RoomManager()}{~RoomManager()}}
+{\footnotesize\ttfamily Room\+Manager\+::$\sim$\+Room\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destruct a \mbox{\hyperlink{struct_game_room_1_1_room_manager}{Room\+Manager}} object 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_game_room_1_1_room_manager_a4578dc22995271d9fa4aa4f31dc04e29}\label{struct_game_room_1_1_room_manager_a4578dc22995271d9fa4aa4f31dc04e29}} 
+\index{GameRoom::RoomManager@{GameRoom::RoomManager}!addRoom@{addRoom}}
+\index{addRoom@{addRoom}!GameRoom::RoomManager@{GameRoom::RoomManager}}
+\doxysubsubsection{\texorpdfstring{addRoom()}{addRoom()}}
+{\footnotesize\ttfamily bool Room\+Manager\+::add\+Room (\begin{DoxyParamCaption}\item[{std\+::string $\ast$}]{room\+JSON,  }\item[{std\+::function$<$ void(\mbox{\hyperlink{struct_game_room_1_1_room}{Room}} $\ast$)$>$}]{creation\+Code }\end{DoxyParamCaption})}
+
+Create a new room safely
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+\_\+path} & the path to the rooms json property file \\
+\hline
+{\em creation\+Code} & a function that runs at the start of the room. Put objects to store in each room here \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_room_1_1_room_manager_a86a90fbb01f21718ef95622827b7b1d9}\label{struct_game_room_1_1_room_manager_a86a90fbb01f21718ef95622827b7b1d9}} 
+\index{GameRoom::RoomManager@{GameRoom::RoomManager}!destroyRoom@{destroyRoom}}
+\index{destroyRoom@{destroyRoom}!GameRoom::RoomManager@{GameRoom::RoomManager}}
+\doxysubsubsection{\texorpdfstring{destroyRoom()}{destroyRoom()}}
+{\footnotesize\ttfamily bool Room\+Manager\+::destroy\+Room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destroy a room safely \mbox{\Hypertarget{struct_game_room_1_1_room_manager_ad31973782723b5a0f662495746aeebbc}\label{struct_game_room_1_1_room_manager_ad31973782723b5a0f662495746aeebbc}} 
+\index{GameRoom::RoomManager@{GameRoom::RoomManager}!getCurrentRoom@{getCurrentRoom}}
+\index{getCurrentRoom@{getCurrentRoom}!GameRoom::RoomManager@{GameRoom::RoomManager}}
+\doxysubsubsection{\texorpdfstring{getCurrentRoom()}{getCurrentRoom()}}
+{\footnotesize\ttfamily size\+\_\+t Room\+Manager\+::get\+Current\+Room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the index of the current room \mbox{\Hypertarget{struct_game_room_1_1_room_manager_aece3ee88280559659aee7a760f02cbf9}\label{struct_game_room_1_1_room_manager_aece3ee88280559659aee7a760f02cbf9}} 
+\index{GameRoom::RoomManager@{GameRoom::RoomManager}!getNumRooms@{getNumRooms}}
+\index{getNumRooms@{getNumRooms}!GameRoom::RoomManager@{GameRoom::RoomManager}}
+\doxysubsubsection{\texorpdfstring{getNumRooms()}{getNumRooms()}}
+{\footnotesize\ttfamily size\+\_\+t Room\+Manager\+::get\+Num\+Rooms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the number of rooms in the game \mbox{\Hypertarget{struct_game_room_1_1_room_manager_a91580442128a7e3abba6215881c74734}\label{struct_game_room_1_1_room_manager_a91580442128a7e3abba6215881c74734}} 
+\index{GameRoom::RoomManager@{GameRoom::RoomManager}!getRoomName@{getRoomName}}
+\index{getRoomName@{getRoomName}!GameRoom::RoomManager@{GameRoom::RoomManager}}
+\doxysubsubsection{\texorpdfstring{getRoomName()}{getRoomName()}}
+{\footnotesize\ttfamily std\+::string $\ast$ Room\+Manager\+::get\+Room\+Name (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Get the name of a room \mbox{\Hypertarget{struct_game_room_1_1_room_manager_aad05df290ea6ca73e9d8280fbd7b5e73}\label{struct_game_room_1_1_room_manager_aad05df290ea6ca73e9d8280fbd7b5e73}} 
+\index{GameRoom::RoomManager@{GameRoom::RoomManager}!getRoomPointer@{getRoomPointer}}
+\index{getRoomPointer@{getRoomPointer}!GameRoom::RoomManager@{GameRoom::RoomManager}}
+\doxysubsubsection{\texorpdfstring{getRoomPointer()}{getRoomPointer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_game_room_1_1_room}{Room}} $\ast$ Room\+Manager\+::get\+Room\+Pointer (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Get a pointer to the room 
+\begin{DoxyParams}{Parameters}
+{\em index} & the index of the room in the room\+\_\+array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_game_room_1_1_room_manager_a27c059cc495d7ff5c4201546ac7c9c3e}\label{struct_game_room_1_1_room_manager_a27c059cc495d7ff5c4201546ac7c9c3e}} 
+\index{GameRoom::RoomManager@{GameRoom::RoomManager}!restartRoom@{restartRoom}}
+\index{restartRoom@{restartRoom}!GameRoom::RoomManager@{GameRoom::RoomManager}}
+\doxysubsubsection{\texorpdfstring{restartRoom()}{restartRoom()}}
+{\footnotesize\ttfamily bool Room\+Manager\+::restart\+Room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Restart a room -\/ use Object\+Manager.\+restart\+Room() for a safer function \mbox{\Hypertarget{struct_game_room_1_1_room_manager_a919fec989cc16e5cbaea95dc1a99886f}\label{struct_game_room_1_1_room_manager_a919fec989cc16e5cbaea95dc1a99886f}} 
+\index{GameRoom::RoomManager@{GameRoom::RoomManager}!selectRoom@{selectRoom}}
+\index{selectRoom@{selectRoom}!GameRoom::RoomManager@{GameRoom::RoomManager}}
+\doxysubsubsection{\texorpdfstring{selectRoom()}{selectRoom()}}
+{\footnotesize\ttfamily bool Room\+Manager\+::select\+Room (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Go to a specific room -\/ use Object\+Manager.\+goto\+Room() for a safer function 
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the room to go to \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_rooms_8h}{Game\+Rooms.\+h}}\item 
+Game\+Rooms.\+cpp\end{DoxyCompactItemize}

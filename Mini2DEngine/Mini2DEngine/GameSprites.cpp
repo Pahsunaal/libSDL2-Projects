@@ -8,30 +8,28 @@ using namespace rapidjson;
 using namespace Utils;
 
 Sprite::Sprite(const char* name, const char* path, const char* detailspath, SDL_Renderer* renderer) : name{ name }, path { path }, renderer{ renderer }, angle{}, texture{}, rect{}, temp{ IMG_Load(path) }, detailspath{ detailspath }, sprite_details{} {
-	if (!temp) throw std::runtime_error(IMG_GetError());
+	if (!temp) throw std::runtime_error(IMG_GetError()); // Check image loaded successfully
 	texture = SDL_CreateTextureFromSurface(renderer, temp);
 	rect.w = temp->w;
 	rect.h = temp->h;
 	SDL_FreeSurface(temp);
 
+	// Get the details from a file and parse them into a Document object
 	std::string* doctext = Utils::getStringFromFile(detailspath);
-
 	sprite_details = parseJSON((*doctext).c_str());
 	delete doctext;
 
+	// Validate the details and throw error if incorrect
 	if (!validateDetails(sprite_details)) throw std::runtime_error("The sprite details do not contain required members!");
-
-	printf("Sprite Created %s\n", name);
 }
 
 Sprite::~Sprite() {
-	if(texture) SDL_DestroyTexture(texture);
+	if(texture) SDL_DestroyTexture(texture); // Check if the texture has been created first - it may not have been if an error occured
 	delete sprite_details;
-	printf("Sprite Destroyed %s\n", name);
 }
 
 void Sprite::draw(double newx, double newy) {
-	rect.x = (int)newx - (*sprite_details)["x_offset"].GetInt();
+	rect.x = (int)newx - (*sprite_details)["x_offset"].GetInt(); // Offset the x position of the sprite based on the offset (where the centre of the sprite is)
 	rect.y = (int)newy - (*sprite_details)["y_offset"].GetInt();
 	SDL_RenderCopyEx(renderer, texture, NULL, &rect, angle, NULL, SDL_FLIP_NONE);
 }
@@ -72,6 +70,7 @@ const char* Sprite::getName() {
 
 bool GameSpr::validateDetails(rapidjson::Document* details)
 {
+	// Quick boolean check to see if the sprite has the required members
 	bool result =
 		details->HasMember("x_offset") &&
 		details->HasMember("y_offset") &&
@@ -83,6 +82,9 @@ bool GameSpr::validateDetails(rapidjson::Document* details)
 }
 
 bool GameSpr::rectIntersect(SDL_Rect* a, SDL_Rect* b) {
+	// Intersect code by Lazy Foo' Productions
+	// https://lazyfoo.net/tutorials/SDL/27_collision_detection/index.php
+
 	//The sides of the rectangles
 	int leftA, leftB;
 	int rightA, rightB;

@@ -8,6 +8,8 @@ constexpr double Utils::degToRad(double deg) {
 std::pair<double, double> Utils::dirLenToVector(double direction, double length) {
 	std::pair<double, double> pair{};
 	double rad = degToRad(direction);
+
+	// Basic trig to convert
 	pair.first = length * std::cos(rad);
 	pair.second = length * std::sin(rad);
 	return pair;

@@ -1,0 +1,31 @@
+\hypertarget{_utilities_8h_source}{}\doxysection{Utilities.\+h}
+\mbox{\hyperlink{_utilities_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef H\_UTILITIES}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define H\_UTILITIES}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <rapidjson/document.h>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }Utils \{}
+\DoxyCodeLine{17     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{_utilities_8h_abcbeec391577e8f2be9af373b1fa31dc}{pi}} = 3.14159265358979323846;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{23     \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} \mbox{\hyperlink{_utilities_8h_a39549648b00d34578b88b9b48d65ac4c}{degToRad}}(\textcolor{keywordtype}{double} deg);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{30     std::pair<double, double> \mbox{\hyperlink{_utilities_8h_a214dc186e48916823fd110ab439b537c}{dirLenToVector}}(\textcolor{keywordtype}{double} direction, \textcolor{keywordtype}{double} length);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{36     std::string* \mbox{\hyperlink{_utilities_8h_aa1f86231588c57fe6067f672d2bbdd1b}{getStringFromFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{42     rapidjson::Document* \mbox{\hyperlink{_utilities_8h_a76777030d2af81cda33eccb2f281344e}{parseJSON}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* pathToFile);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{48     \textcolor{keywordtype}{double} \mbox{\hyperlink{_utilities_8h_a2cf9b7966bc79e99744ebc16c2e536a5}{randDouble}}(\textcolor{keywordtype}{double} max);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{55     \textcolor{keywordtype}{double} \mbox{\hyperlink{_utilities_8h_a03274745481b1baf8b055221cca72696}{choose}}(\textcolor{keywordtype}{double} i, \textcolor{keywordtype}{double} j);}
+\DoxyCodeLine{56 \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !H\_UTILITIES}}
+
+\end{DoxyCode}

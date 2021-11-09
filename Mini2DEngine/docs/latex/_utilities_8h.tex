@@ -1,0 +1,119 @@
+\hypertarget{_utilities_8h}{}\doxysection{Utilities.\+h File Reference}
+\label{_utilities_8h}\index{Utilities.h@{Utilities.h}}
+
+
+Provide several basic utilities to the engine.  
+
+
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$rapidjson/document.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr double \mbox{\hyperlink{_utilities_8h_a39549648b00d34578b88b9b48d65ac4c}{Utils\+::deg\+To\+Rad}} (double deg)
+\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{_utilities_8h_a214dc186e48916823fd110ab439b537c}{Utils\+::dir\+Len\+To\+Vector}} (double direction, double length)
+\item 
+std\+::string $\ast$ \mbox{\hyperlink{_utilities_8h_aa1f86231588c57fe6067f672d2bbdd1b}{Utils\+::get\+String\+From\+File}} (const char $\ast$filename)
+\item 
+rapidjson\+::\+Document $\ast$ \mbox{\hyperlink{_utilities_8h_a76777030d2af81cda33eccb2f281344e}{Utils\+::parse\+JSON}} (const char $\ast$path\+To\+File)
+\item 
+double \mbox{\hyperlink{_utilities_8h_a2cf9b7966bc79e99744ebc16c2e536a5}{Utils\+::rand\+Double}} (double max)
+\item 
+double \mbox{\hyperlink{_utilities_8h_a03274745481b1baf8b055221cca72696}{Utils\+::choose}} (double i, double j)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{_utilities_8h_abcbeec391577e8f2be9af373b1fa31dc}{Utils\+::pi}} = 3.\+14159265358979323846
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide several basic utilities to the engine. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_utilities_8h_a03274745481b1baf8b055221cca72696}\label{_utilities_8h_a03274745481b1baf8b055221cca72696}} 
+\index{Utilities.h@{Utilities.h}!choose@{choose}}
+\index{choose@{choose}!Utilities.h@{Utilities.h}}
+\doxysubsubsection{\texorpdfstring{choose()}{choose()}}
+{\footnotesize\ttfamily double Utils\+::choose (\begin{DoxyParamCaption}\item[{double}]{i,  }\item[{double}]{j }\end{DoxyParamCaption})}
+
+Choose between two options at random and return one of them 
+\begin{DoxyParams}{Parameters}
+{\em i} & the first option that could be picked \\
+\hline
+{\em j} & the second option that could be picked \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_utilities_8h_a39549648b00d34578b88b9b48d65ac4c}\label{_utilities_8h_a39549648b00d34578b88b9b48d65ac4c}} 
+\index{Utilities.h@{Utilities.h}!degToRad@{degToRad}}
+\index{degToRad@{degToRad}!Utilities.h@{Utilities.h}}
+\doxysubsubsection{\texorpdfstring{degToRad()}{degToRad()}}
+{\footnotesize\ttfamily constexpr double Utils\+::deg\+To\+Rad (\begin{DoxyParamCaption}\item[{double}]{deg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Convert degrees to radians 
+\begin{DoxyParams}{Parameters}
+{\em deg} & the value in degrees to convert \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_utilities_8h_a214dc186e48916823fd110ab439b537c}\label{_utilities_8h_a214dc186e48916823fd110ab439b537c}} 
+\index{Utilities.h@{Utilities.h}!dirLenToVector@{dirLenToVector}}
+\index{dirLenToVector@{dirLenToVector}!Utilities.h@{Utilities.h}}
+\doxysubsubsection{\texorpdfstring{dirLenToVector()}{dirLenToVector()}}
+{\footnotesize\ttfamily std\+::pair$<$ double, double $>$ Utils\+::dir\+Len\+To\+Vector (\begin{DoxyParamCaption}\item[{double}]{direction,  }\item[{double}]{length }\end{DoxyParamCaption})}
+
+Convert a direction and length to a vector 
+\begin{DoxyParams}{Parameters}
+{\em dir} & direction in degrees \\
+\hline
+{\em length} & the length of the target vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_utilities_8h_aa1f86231588c57fe6067f672d2bbdd1b}\label{_utilities_8h_aa1f86231588c57fe6067f672d2bbdd1b}} 
+\index{Utilities.h@{Utilities.h}!getStringFromFile@{getStringFromFile}}
+\index{getStringFromFile@{getStringFromFile}!Utilities.h@{Utilities.h}}
+\doxysubsubsection{\texorpdfstring{getStringFromFile()}{getStringFromFile()}}
+{\footnotesize\ttfamily std\+::string $\ast$ Utils\+::get\+String\+From\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+Return a string of a files contents 
+\begin{DoxyParams}{Parameters}
+{\em filename} & path of the file to read from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_utilities_8h_a76777030d2af81cda33eccb2f281344e}\label{_utilities_8h_a76777030d2af81cda33eccb2f281344e}} 
+\index{Utilities.h@{Utilities.h}!parseJSON@{parseJSON}}
+\index{parseJSON@{parseJSON}!Utilities.h@{Utilities.h}}
+\doxysubsubsection{\texorpdfstring{parseJSON()}{parseJSON()}}
+{\footnotesize\ttfamily rapidjson\+::\+Document $\ast$ Utils\+::parse\+JSON (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path\+To\+File }\end{DoxyParamCaption})}
+
+Parse a json file into a Document object 
+\begin{DoxyParams}{Parameters}
+{\em path\+To\+File} & path of the file to read from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_utilities_8h_a2cf9b7966bc79e99744ebc16c2e536a5}\label{_utilities_8h_a2cf9b7966bc79e99744ebc16c2e536a5}} 
+\index{Utilities.h@{Utilities.h}!randDouble@{randDouble}}
+\index{randDouble@{randDouble}!Utilities.h@{Utilities.h}}
+\doxysubsubsection{\texorpdfstring{randDouble()}{randDouble()}}
+{\footnotesize\ttfamily double Utils\+::rand\+Double (\begin{DoxyParamCaption}\item[{double}]{max }\end{DoxyParamCaption})}
+
+Get a random double between 0 and a maximum 
+\begin{DoxyParams}{Parameters}
+{\em max} & the maximum value of the double \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_utilities_8h_abcbeec391577e8f2be9af373b1fa31dc}\label{_utilities_8h_abcbeec391577e8f2be9af373b1fa31dc}} 
+\index{Utilities.h@{Utilities.h}!pi@{pi}}
+\index{pi@{pi}!Utilities.h@{Utilities.h}}
+\doxysubsubsection{\texorpdfstring{pi}{pi}}
+{\footnotesize\ttfamily const double Utils\+::pi = 3.\+14159265358979323846}
+
+The mathematical constant of pi, to 20 decimal places 

@@ -1,0 +1,78 @@
+\hypertarget{_i_o_handlers_8h_source}{}\doxysection{IOHandlers.\+h}
+\mbox{\hyperlink{_i_o_handlers_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <SDL.h>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }IO \{}
+\DoxyCodeLine{12     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_o_1_1_mouse_input}{MouseInput}} \{}
+\DoxyCodeLine{14         \mbox{\hyperlink{struct_i_o_1_1_mouse_input_a8c989aeb83dd5d5918eeb5c7684652d9}{MouseInput}}();}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{17         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_a658417a9501aac7605378f288e3a47cf}{getLeftButtonDown}}();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{20         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_a982a6e6d196a201b066cd26711ed80a8}{getRightButtonDown}}();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{23         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_adf4f45803dbc8de9aa2629816e9b7ae1}{getLeftButtonUp}}();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{26         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_a09cb881deffab90c0d0e80179dbd9d06}{getRightButtonUp}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{29         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_abfcee45554ef6e9f0ef2e58e92fcf6d8}{getLeftButton}}();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{32         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_a26cbc9eb08d008b76a2d0941be318b54}{getRightButton}}();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{35         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_a23f27e1e57c8618bb0b346a115a70489}{getX}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{38         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_ad09df227b69ba45cbf6c5d271bf38b6c}{getY}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \textcolor{comment}{/* Following functions are engine ONLY -\/ used to set values */}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{43         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_ac7aaddce7efd60cc9dc82ce9df1a1504}{setLeftButtonDown}}(\textcolor{keywordtype}{bool} down);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_af8c6be5aff564136b8132b3ef2c825f1}{setRightButtonDown}}(\textcolor{keywordtype}{bool} down);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_a1b9dd7c8873e4e1849110cb160602580}{setLeftButtonUp}}(\textcolor{keywordtype}{bool} Up);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_a31c59f37d8f6a3ffba6c3159c40b87e1}{setRightButtonUp}}(\textcolor{keywordtype}{bool} Up);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_ad819b0d991ce628ecf6423c14aded0cf}{setLeftButton}}(\textcolor{keywordtype}{bool} held);}
+\DoxyCodeLine{56         }
+\DoxyCodeLine{58         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_a9f6f26e2934f47fbee8653cfb666b3f9}{setRightButton}}(\textcolor{keywordtype}{bool} held);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_a5d9eb8e51fdcfdc9c7a7307c29a1bf03}{setX}}(\textcolor{keywordtype}{int} newx);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_acab624572aee5e50cae8446295d61534}{setY}}(\textcolor{keywordtype}{int} newy);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_i_o_1_1_mouse_input_a520155a361cb001443b6ed995c2488ec}{endUpdate}}();}
+\DoxyCodeLine{68     \textcolor{keyword}{private}:}
+\DoxyCodeLine{69         \textcolor{keywordtype}{int} x;}
+\DoxyCodeLine{70         \textcolor{keywordtype}{int} y;}
+\DoxyCodeLine{71         \textcolor{keywordtype}{bool} leftButton[3];}
+\DoxyCodeLine{72         \textcolor{keywordtype}{bool} rightButton[3];}
+\DoxyCodeLine{73     \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_o_1_1_keyboard_input}{KeyboardInput}} \{}
+\DoxyCodeLine{77         \mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a92d9c25232e73f2d9319c79df028cc69}{KeyboardInput}}();}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{80         \mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a2aa6da03ad4f06f93a2a940ee59d05f9}{\string~KeyboardInput}}();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{85         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a31d0405d375db650796da14fab49be70}{getKeyDown}}(\textcolor{keywordtype}{int} key\_scancode);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{90         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a989916171ea87b0a03aec910f01ae271}{getKeyUp}}(\textcolor{keywordtype}{int} key\_scancode);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{95         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a88d60575f516cd77c16696b51b1633a6}{getKey}}(\textcolor{keywordtype}{int} key\_scancode);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{98         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a5ac81ddf80c103e0cac3ebad2b1d22b1}{setKeyDown}}(\textcolor{keywordtype}{int} key\_scancode, \textcolor{keywordtype}{bool} down);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{101         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a78d0168a1b391f2394653d3cfdc408b6}{setKeyUp}}(\textcolor{keywordtype}{int} key\_scancode, \textcolor{keywordtype}{bool} up);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{104         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_i_o_1_1_keyboard_input_a5a35fa4562b4c75d6d8cc857bea4997c}{endUpdate}}();}
+\DoxyCodeLine{105     \textcolor{keyword}{private}:}
+\DoxyCodeLine{106         \textcolor{keyword}{const} Uint8* keys;}
+\DoxyCodeLine{107         \textcolor{keywordtype}{int} numKeys;}
+\DoxyCodeLine{108         \textcolor{keywordtype}{bool}* keysDown;}
+\DoxyCodeLine{109         \textcolor{keywordtype}{bool}* keysUp;}
+\DoxyCodeLine{110     \};}
+\DoxyCodeLine{111 \}}
+
+\end{DoxyCode}
