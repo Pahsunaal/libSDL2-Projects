@@ -24,66 +24,31 @@ class MouseInput
 {
 public:
 	/** Construct new MouseInput object*/
-	MouseInput();
+	MouseInput(){};
 
 	/** Check if left mouse button pressed */
-	bool getLeftButtonDown();
+	virtual bool GetLeftButtonDown() = 0;
 
 	/** Check if right mouse button pressed */
-	bool getRightButtonDown();
+	virtual bool GetRightButtonDown() = 0;
 
 	/** Check if left mouse button released */
-	bool getLeftButtonUp();
+	virtual bool GetLeftButtonUp() = 0;
 
 	/** Check if right mouse button released */
-	bool getRightButtonUp();
+	virtual bool GetRightButtonUp() = 0;
 
 	/** Check state of left mouse button */
-	bool getLeftButton();
+	virtual bool GetLeftButton() = 0;
 
 	/** Check state of left mouse button */
-	bool getRightButton();
+	virtual bool GetRightButton() = 0;
 
 	/** Get x position of mouse in room */
-	int getX();
+	virtual int GetX() = 0;
 
 	/** Get y position of mouse in room */
-	int getY();
-
-	/* Following functions are engine ONLY - used to set values */
-
-	/** Engine utility function, do not use */
-	void setLeftButtonDown(bool down);
-
-	/** Engine utility function, do not use */
-	void setRightButtonDown(bool down);
-
-	/** Engine utility function, do not use */
-	void setLeftButtonUp(bool Up);
-
-	/** Engine utility function, do not use */
-	void setRightButtonUp(bool Up);
-
-	/** Engine utility function, do not use */
-	void setLeftButton(bool held);
-	
-	/** Engine utility function, do not use */
-	void setRightButton(bool held);
-
-	/** Engine utility function, do not use */
-	void setX(int newx);
-
-	/** Engine utility function, do not use */
-	void setY(int newy);
-
-	/** Engine utility function, do not use */
-	void endUpdate();
-private:
-	int x;
-	int y;
-	bool leftButton[3];
-	bool rightButton[3];
-
+	virtual int GetY() = 0;
 };
 
 }
