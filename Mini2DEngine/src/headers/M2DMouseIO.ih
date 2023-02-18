@@ -1,0 +1,11 @@
+#ifndef M2D_MOUSE_IO_IH
+#define M2D_MOUSE_IO_IH
+
+#include "M2DMouseIO.h"
+
+class MouseInputImp : public MouseInput
+{
+
+};
+
+#endif // M2D_MOUSE_IO_IH
