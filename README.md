@@ -1,3 +1,5 @@
-# libSDL2 Projects
+# mini2dengine
 
-This repository contains a collection of my practice C++ game design projects, specifically those using the SDL2 libraries, which can be found here: https://www.libsdl.org/. Most of these projects were created to practice using C++ to create games, and so will focus on specific skills such as sprite management of player input.
+This is my work-in-progress implementation of a basic 2D game engine written in C++ using the SDL2 library.
+
+Previously, this repo was called libSDL2-Projects and contained a small collection of other little programs, but these have been removed.
