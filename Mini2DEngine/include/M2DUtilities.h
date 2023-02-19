@@ -2,7 +2,7 @@
 #define M2D_UTILITIES_H
 
 /**
-* @file Utilities.h
+* @file M2DUtilities.h
 * @brief Provide several basic utilities to the engine
 ***************************************************/
 
