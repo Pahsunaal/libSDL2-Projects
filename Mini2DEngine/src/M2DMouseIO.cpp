@@ -2,7 +2,7 @@
 //  Includes
 //--------------------------------------------------
 
-#include "M2DMouseIO.h"
+#include "M2DMouseIOImp.h"
 #include <SDL.h>
 #include <cstdio>
 
@@ -11,6 +11,16 @@
 //--------------------------------------------------
 
 using namespace IO;
+
+
+//--------------------------------------------------
+//  MouseInput::Get() : .
+//--------------------------------------------------
+MouseInput* MouseInput::Get()
+{
+	static MouseInputImp mouseInput;
+	return static_cast<MouseInput*>(&mouseInput);
+}
 
 
 

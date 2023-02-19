@@ -5,6 +5,7 @@
 # Dirs
 
 enc_temp_folder/
+build/
 
 # User-specific files
 *.suo

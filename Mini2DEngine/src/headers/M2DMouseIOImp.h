@@ -11,8 +11,12 @@
 //  Class Declaration
 //--------------------------------------------------
 
+namespace IO
+{
+
 class MouseInputImp : public MouseInput
 {
+public:
 	MouseInputImp();
 
 	// Interface
@@ -43,5 +47,7 @@ private:
 	bool leftButton[3];
 	bool rightButton[3];
 };
+
+}
 
 #endif // M2D_MOUSE_IO_IH

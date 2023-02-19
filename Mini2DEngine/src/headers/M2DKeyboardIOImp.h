@@ -11,16 +11,20 @@
 //  Class Declaration
 //--------------------------------------------------
 
+namespace IO
+{
+
 class KeyboardInputImp : public KeyboardInput
 {
+public:
 	KeyboardInputImp();
 	~KeyboardInputImp();
 
 	// Interface
 
-	bool GetKeyDown(int key_scancode) override;
-	bool GetKeyUp(int key_scancode) override;
-	bool GetKey(int key_scancode) override;
+	bool GetKeyDown(int key_scancode);
+	bool GetKeyUp(int key_scancode);
+	bool GetKey(int key_scancode);
 
 	// Engine
 
@@ -33,5 +37,7 @@ private:
 	bool* keysDown;
 	bool* keysUp;
 };
+
+}
 
 #endif // M2D_KEYBOARD_IO_IH

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmini2dengine.a CMakeFiles/mini2dengine.dir/src/GameObjects.cpp.o CMakeFiles/mini2dengine.dir/src/GameRooms.cpp.o CMakeFiles/mini2dengine.dir/src/GameSprites.cpp.o CMakeFiles/mini2dengine.dir/src/GameText.cpp.o CMakeFiles/mini2dengine.dir/src/InputHandlers.cpp.o CMakeFiles/mini2dengine.dir/src/Source.cpp.o CMakeFiles/mini2dengine.dir/src/Utilities.cpp.o
-/usr/bin/ranlib libmini2dengine.a

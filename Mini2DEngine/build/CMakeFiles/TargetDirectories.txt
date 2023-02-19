@@ -1,3 +1,0 @@
-/home/timothymitcheson/mini2dengine/Mini2DEngine/build/CMakeFiles/mini2dengine.dir
-/home/timothymitcheson/mini2dengine/Mini2DEngine/build/CMakeFiles/edit_cache.dir
-/home/timothymitcheson/mini2dengine/Mini2DEngine/build/CMakeFiles/rebuild_cache.dir

@@ -2,7 +2,7 @@
 //  Includes
 //--------------------------------------------------
 
-#include "M2DKeyboardIO.h"
+#include "M2DKeyboardIOImp.h"
 #include <SDL.h>
 #include <cstdio>
 
@@ -11,6 +11,19 @@
 //--------------------------------------------------
 
 using namespace IO;
+
+
+
+
+
+//--------------------------------------------------
+//  KeyboardInput::Get() : .
+//--------------------------------------------------
+KeyboardInput* KeyboardInput::Get()
+{
+	static KeyboardInputImp keyboardInput;
+	return static_cast<KeyboardInput*>(&keyboardInput);
+}
 
 
 

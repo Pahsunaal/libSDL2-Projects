@@ -23,11 +23,8 @@ namespace IO
 class KeyboardInput
 {
 public:
-	/** Construct new KeyboardInput object */
-	KeyboardInput(){};
-
-	/** Destroy KeyboardInput object */
-	~KeyboardInput(){};
+	/** Get the KeyboardInput object */
+	static KeyboardInput* Get();
 
 	/** Check if key pressed 
 	* @param key_scancode: the code of the key to check. Refer to SDL Scancodes online
@@ -43,6 +40,9 @@ public:
 	* @param key_scancode: the code of the key to check. Refer to SDL Scancodes online
 	*/
 	virtual bool GetKey(int key_scancode) = 0;
+protected:
+	KeyboardInput(){};
+	~KeyboardInput(){};
 };
 
 }

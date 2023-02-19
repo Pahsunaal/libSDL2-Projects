@@ -23,8 +23,8 @@ namespace IO
 class MouseInput
 {
 public:
-	/** Construct new MouseInput object*/
-	MouseInput(){};
+	/** Get the MouseInput object */
+	static MouseInput* Get();
 
 	/** Check if left mouse button pressed */
 	virtual bool GetLeftButtonDown() = 0;
@@ -49,6 +49,8 @@ public:
 
 	/** Get y position of mouse in room */
 	virtual int GetY() = 0;
+protected:
+	MouseInput(){};
 };
 
 }

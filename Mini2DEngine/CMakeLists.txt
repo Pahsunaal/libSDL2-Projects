@@ -8,13 +8,20 @@ project(Mini2DEngine VERSION 1.0
                      DESCRIPTION "Basic 2D game engine"
                      LANGUAGES CXX)
 
-add_library(mini2dengine STATIC src/GameObjects.cpp
-                                src/GameRooms.cpp
-                                src/GameSprites.cpp
-                                src/GameText.cpp
-                                src/InputHandlers.cpp
-                                src/Source.cpp
-                                src/Utilities.cpp
+find_package(SDL2 REQUIRED)
+include_directories(${SDL2_INCLUDE_DIRS})
+
+find_package(RapidJSON REQUIRED)
+include_directories(${RapidJSON_INCLUDE_DIR})
+
+
+
+add_library(mini2dengine STATIC src/M2DMouseIO.cpp
+                                src/M2DKeyboardIO.cpp
+                                src/M2DUtilities.cpp
                                 )
 
+target_link_libraries(mini2dengine ${SDL2_LIBRARIES})
+
+target_include_directories(mini2dengine PRIVATE src/headers)
 target_include_directories(mini2dengine PUBLIC include)
