@@ -11,7 +11,7 @@
 //  Class Declaration
 //--------------------------------------------------
 
-namespace Text
+namespace Txt
 {
 
 class TextImp : public Text

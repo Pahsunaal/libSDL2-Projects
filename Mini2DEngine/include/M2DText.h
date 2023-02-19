@@ -18,14 +18,17 @@
 //  Class Declaration
 //--------------------------------------------------
 
-namespace Text {
+namespace Txt
+{
 
 /**
  * A Text object - when initialised and drawn, will display its contained message with a defined colour and size.
  * These should NOT be created directly. Use TextManager::createText() instead, and TextManager::destroyText()
  * for destruction.
  */
-class Text {
+class Text
+{
+public:
 	/**
 	* Draw the text object at the given x and y
 	*

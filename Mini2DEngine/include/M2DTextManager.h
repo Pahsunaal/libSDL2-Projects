@@ -1,4 +1,5 @@
-#pragma once
+#ifndef M2D_TEXT_MANAGER_H
+#define M2D_TEXT_MANAGER_H
 
 /**
 * @file GameText.h
@@ -14,23 +15,28 @@
 #include <string>
 
 //--------------------------------------------------
+//  Types
+//--------------------------------------------------
+
+
+
+//--------------------------------------------------
 //  Class Declaration
 //--------------------------------------------------
 
-namespace Text {
+namespace Txt
+{
+
+class Text;
 /** Maximum number of text objects the engine allows */
 const size_t max_texts{ 100 };
 
 /** Manage the lifetime and storage of Text objects */
-class TextManager {
+class TextManager
+{
 public:
-	/**
-	* Construct a new TextManager
-	* @param renderer: pointer to the SDL_Renderer target to use
-	*/
-	TextManager(SDL_Renderer* renderer);
-	/** Destructs the TextManager */
-	~TextManager();
+	/** Get the TextManager object */
+	static TextManager* Get();
 
 	/**
 	* Construct new Text object safely
@@ -40,7 +46,7 @@ public:
 	* @param message: the c-string message to display
 	* @param color: the color of the text
 	*/
-	Text* createText(const char* fontpath, int size, const char* message, SDL_Color color);
+	virtual Text* CreateText(const char* fontpath, int size, const char* message, SDL_Color color) = 0;
 
 	/**
 	* Construct new Text object safely
@@ -52,16 +58,17 @@ public:
 	* @param width: the width of the text area
 	* @param height: the height of the text area
 	*/
-	Text* createText(const char* fontpath, int size, const char* message, SDL_Color color, int width, int height);
+	virtual Text* CreateText(const char* fontpath, int size, const char* message, SDL_Color color, int width, int height) = 0;
 
 	/** Destroy the referenced Text object 
 	* @param text: pointer to the Text object to destroy
 	*/
-	void destroyText(Text* text);
-
-private:
-	Text* text_array[max_texts];
-	size_t num_texts;
-	SDL_Renderer* renderer;
+	virtual void DestroyText(Text* text) = 0;
+protected:
+	TextManager(){};
+	~TextManager(){};
 };
+
 }
+
+#endif // M2D_TEXT_MANAGER_H

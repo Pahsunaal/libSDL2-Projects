@@ -9,7 +9,7 @@
 //  Types
 //--------------------------------------------------
 
-using namespace Text;
+using namespace Txt;
 
 
 

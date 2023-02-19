@@ -21,6 +21,7 @@ add_library(mini2dengine STATIC src/M2DMouseIO.cpp
                                 src/M2DKeyboardIO.cpp
                                 src/M2DUtilities.cpp
                                 src/M2DText.cpp
+                                src/M2DTextManager.cpp
                                 )
 
 target_link_libraries(mini2dengine ${SDL2_LIBRARIES})
